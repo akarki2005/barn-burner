@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2wvpdttswyui"]
+
+[ext_resource type="Texture2D" uid="uid://h3vqityierru" path="res://Sprites/boards.bmp" id="1_ancyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4phi"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a4phi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_ancyr")

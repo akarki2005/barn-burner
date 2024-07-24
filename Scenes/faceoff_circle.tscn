@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c47saau2j8r4g"]
+
+[ext_resource type="Texture2D" uid="uid://bphtgfs5ui7b8" path="res://Sprites/faceoff_circle.bmp" id="1_g0nw3"]
+
+[node name="FaceoffCircle" type="Sprite2D"]
+texture = ExtResource("1_g0nw3")

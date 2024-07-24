@@ -1,0 +1,224 @@
+[gd_scene load_steps=23 format=3 uid="uid://bi0qkiv7i6wn7"]
+
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_8kwm6"]
+[ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
+[ext_resource type="PackedScene" uid="uid://bdmy3lue8kh57" path="res://Scenes/puck.tscn" id="3_084px"]
+[ext_resource type="PackedScene" uid="uid://c2itpx1jplduk" path="res://Scenes/redline.tscn" id="3_q7evj"]
+[ext_resource type="PackedScene" uid="uid://dcjpgn004wj21" path="res://Scenes/crease.tscn" id="4_0b8qr"]
+[ext_resource type="PackedScene" uid="uid://bjmw12u4pn1rr" path="res://Scenes/ice.tscn" id="4_whc5v"]
+[ext_resource type="PackedScene" uid="uid://b2wvpdttswyui" path="res://Scenes/boards.tscn" id="5_05yok"]
+[ext_resource type="PackedScene" uid="uid://c47saau2j8r4g" path="res://Scenes/faceoff_circle.tscn" id="5_uv7uw"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="9_l3ydf"]
+[ext_resource type="Texture2D" uid="uid://dxxeild4tycr2" path="res://Sprites/scoreboard.bmp" id="9_s2bg7"]
+[ext_resource type="PackedScene" uid="uid://bp6dj0wuu813j" path="res://Scenes/goal_light.tscn" id="10_8tngk"]
+[ext_resource type="Script" path="res://Scenes/UserInterface.gd" id="10_dsy6l"]
+[ext_resource type="Script" path="res://Scenes/goal_light.gd" id="11_wvyi8"]
+[ext_resource type="Script" path="res://Scenes/TimeDisplay.gd" id="13_t207e"]
+[ext_resource type="Script" path="res://Scenes/GameClock.gd" id="14_sl5i8"]
+[ext_resource type="Script" path="res://Scenes/P1Score.gd" id="15_u687c"]
+[ext_resource type="Script" path="res://Scenes/P2Score.gd" id="16_2sjf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hg4b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prnau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bowmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elutc"]
+
+[sub_resource type="Theme" id="Theme_kwpcf"]
+default_font = ExtResource("9_l3ydf")
+default_font_size = 50
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8kwm6")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Ice" type="Node2D" parent="Background"]
+
+[node name="Ice Surface" parent="Background/Ice" instance=ExtResource("4_whc5v")]
+scale = Vector2(72, 40.5)
+
+[node name="GoallineLeft" parent="Background/Ice" instance=ExtResource("3_q7evj")]
+position = Vector2(-569, 0)
+scale = Vector2(0.87, 20)
+
+[node name="GoallineRight" parent="Background/Ice" instance=ExtResource("3_q7evj")]
+position = Vector2(569, 0)
+scale = Vector2(0.87, 20)
+
+[node name="CreaseLeft" parent="Background/Ice" instance=ExtResource("4_0b8qr")]
+position = Vector2(-450, 34.75)
+scale = Vector2(14, 14)
+
+[node name="CreaseRight" parent="Background/Ice" instance=ExtResource("4_0b8qr")]
+position = Vector2(450, 34.75)
+rotation = 3.14159
+scale = Vector2(14, 14)
+
+[node name="FaceoffCircle" parent="Background/Ice" instance=ExtResource("5_uv7uw")]
+position = Vector2(0, 34.75)
+scale = Vector2(14, 14)
+
+[node name="CenterLineTop" parent="Background/Ice" instance=ExtResource("3_q7evj")]
+position = Vector2(0, -160)
+scale = Vector2(0.87, 10.38)
+
+[node name="Redline" parent="Background/Ice" instance=ExtResource("3_q7evj")]
+position = Vector2(0, 230)
+scale = Vector2(0.87, 10.38)
+
+[node name="Boards" type="Node2D" parent="Background"]
+
+[node name="Bottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(0, 317)
+scale = Vector2(57.6, 0.7)
+
+[node name="Top" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(0, -250)
+scale = Vector2(57.6, 0.7)
+
+[node name="LeftTop" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(-569, -160)
+scale = Vector2(0.7, 8.275)
+
+[node name="LeftBottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(-569, 230)
+scale = Vector2(0.7, 8.275)
+
+[node name="RightTop" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(569, -160)
+scale = Vector2(0.7, 8.275)
+
+[node name="RightBottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
+position = Vector2(569, 230)
+scale = Vector2(0.7, 8.275)
+
+[node name="PlayerBlockerLeft" type="StaticBody2D" parent="Background/Boards"]
+position = Vector2(-569, 35)
+scale = Vector2(0.75, 11.2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/PlayerBlockerLeft"]
+shape = SubResource("RectangleShape2D_7hg4b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Boards"]
+position = Vector2(569, 35)
+scale = Vector2(0.75, 11.2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/StaticBody2D"]
+shape = SubResource("RectangleShape2D_prnau")
+
+[node name="GoalDetectorLeft" type="Area2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorLeft"]
+position = Vector2(-645, 35)
+scale = Vector2(1, 29)
+shape = SubResource("RectangleShape2D_bowmq")
+
+[node name="GoalDetectorRight" type="Area2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorRight"]
+position = Vector2(645, 35)
+scale = Vector2(1, 29)
+shape = SubResource("RectangleShape2D_elutc")
+
+[node name="Player1" parent="." instance=ExtResource("2_d2tic")]
+position = Vector2(300, 359)
+move_left = "leftp1"
+move_right = "rightp1"
+move_up = "upp1"
+move_down = "downp1"
+
+[node name="Player2" parent="." instance=ExtResource("2_d2tic")]
+position = Vector2(852, 359)
+move_left = "leftp2"
+move_right = "rightp2"
+move_up = "upp2"
+move_down = "downp2"
+
+[node name="Puck" parent="." instance=ExtResource("3_084px")]
+position = Vector2(576, 359)
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_kwpcf")
+script = ExtResource("10_dsy6l")
+
+[node name="Scoreboard" type="Sprite2D" parent="UserInterface"]
+position = Vector2(576, 42)
+scale = Vector2(10, 10)
+texture = ExtResource("9_s2bg7")
+
+[node name="GoalLightP1" parent="UserInterface" instance=ExtResource("10_8tngk")]
+position = Vector2(295, 35)
+scale = Vector2(4, 4)
+frame_progress = 0.972638
+script = ExtResource("11_wvyi8")
+
+[node name="GoalLightP2" parent="UserInterface" instance=ExtResource("10_8tngk")]
+position = Vector2(857, 35)
+scale = Vector2(4, 4)
+script = ExtResource("11_wvyi8")
+
+[node name="TimeDisplay" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 16.0
+offset_right = 632.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_t207e")
+
+[node name="GameClock" type="Timer" parent="UserInterface/TimeDisplay"]
+wait_time = 120.0
+one_shot = true
+script = ExtResource("14_sl5i8")
+
+[node name="P1Score" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 16.0
+offset_right = 512.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("15_u687c")
+
+[node name="P2Score" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 16.0
+offset_right = 696.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("16_2sjf5")
+
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="." method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player1" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player2" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="Puck" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="UserInterface" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="." method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="Player1" method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="Player2" method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="Puck" method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="UserInterface" method="_on_goal_detector_right_body_entered"]
+[connection signal="timeout" from="UserInterface/TimeDisplay/GameClock" to="." method="_on_game_clock_timeout"]
+[connection signal="timeout" from="UserInterface/TimeDisplay/GameClock" to="UserInterface/TimeDisplay" method="_on_game_clock_timeout"]
