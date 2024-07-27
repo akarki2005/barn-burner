@@ -264,6 +264,26 @@ vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("23_67m58")
 
+[node name="P1TeamLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 19.0
+offset_right = 449.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2TeamLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 19.0
+offset_right = 809.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="." method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player1" method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player2" method="_on_goal_detector_left_body_entered"]

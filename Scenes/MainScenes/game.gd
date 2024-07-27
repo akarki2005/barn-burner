@@ -14,6 +14,12 @@ func _ready():
 	var gamealert = $UserInterface/GameAlert
 	gamealertlabel._alert('faceoff')
 	gamealert._alert('faceoff')
+	var p1teamlabel = $UserInterface/P1TeamLabel
+	var p2teamlabel = $UserInterface/P2TeamLabel
+	var p1_team_number = GameVariables.p1_team_number
+	var p2_team_number = GameVariables.p2_team_number
+	p1teamlabel.text = GameVariables.globalTeamSpritesheet[p1_team_number][0]
+	p2teamlabel.text = GameVariables.globalTeamSpritesheet[p2_team_number][0]
 
 
 func _on_goal_scored(scorer):

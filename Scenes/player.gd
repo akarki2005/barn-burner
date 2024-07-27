@@ -61,9 +61,9 @@ var frozen = true
 func _ready():
 	# set sprite of players
 	if self.move_left == 'leftp1':
-		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p1_team_number]
+		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p1_team_number][1]
 	else:
-		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p2_team_number]
+		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p2_team_number][1]
 	teamSprite.scale = Vector2(1.2, 1.2)
 	await get_tree().create_timer(3.0).timeout
 	frozen = false
