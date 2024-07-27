@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqd4cvixv7ind"]
+
+[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Scenes/arrow.bmp" id="1_sgx4k"]
+
+[node name="Arrow" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_sgx4k")

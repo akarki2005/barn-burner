@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvmfccgj5p31s"]
+
+[ext_resource type="Script" path="res://Scenes/MainScenes/pre_game_screen.gd" id="1_swc2d"]
+[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="1_wxchi"]
+[ext_resource type="Texture2D" uid="uid://d0htaaxtofd6x" path="res://Sprites/teamSprites/ANA.bmp" id="2_d5bir"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="4_avriw"]
+[ext_resource type="PackedScene" uid="uid://dqd4cvixv7ind" path="res://Scenes/arrow.tscn" id="4_v7lnl"]
+[ext_resource type="Texture2D" uid="uid://cd6ccctfiqprx" path="res://Sprites/puck.bmp" id="6_4tgpw"]
+
+[sub_resource type="Theme" id="Theme_b5guk"]
+default_font = ExtResource("4_avriw")
+
+[node name="PreGameScreen" type="Node2D"]
+script = ExtResource("1_swc2d")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(73, 42)
+texture = ExtResource("1_wxchi")
+
+[node name="P1Preview" type="Sprite2D" parent="."]
+position = Vector2(288, 324)
+scale = Vector2(10, 10)
+texture = ExtResource("2_d5bir")
+
+[node name="P2Preview" type="Sprite2D" parent="."]
+position = Vector2(864, 324)
+scale = Vector2(10, 10)
+texture = ExtResource("2_d5bir")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_b5guk")
+
+[node name="P1LeftArrow" parent="Control" instance=ExtResource("4_v7lnl")]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 540.0
+offset_right = 229.0
+offset_bottom = 556.0
+flip_h = true
+
+[node name="P1RightArrow" parent="Control" instance=ExtResource("4_v7lnl")]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 540.0
+offset_right = 314.0
+offset_bottom = 556.0
+
+[node name="P2LeftArrow" parent="Control" instance=ExtResource("4_v7lnl")]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 540.0
+offset_right = 806.0
+offset_bottom = 556.0
+flip_h = true
+
+[node name="P2RightArrow" parent="Control" instance=ExtResource("4_v7lnl")]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 540.0
+offset_right = 891.0
+offset_bottom = 556.0
+
+[node name="PlayButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 261.0
+offset_right = 521.0
+offset_bottom = 277.0
+scale = Vector2(8, 8)
+texture_normal = ExtResource("6_4tgpw")
+
+[node name="P1Team" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 457.0
+offset_right = 482.0
+offset_bottom = 529.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2Team" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 455.0
+offset_right = 1048.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "TEAM SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P1Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 106.0
+offset_right = 518.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "PLAYER 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 105.0
+offset_right = 1094.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "PLAYER 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/P1LeftArrow" to="." method="_on_p1_left_arrow_pressed"]
+[connection signal="pressed" from="Control/P1RightArrow" to="." method="_on_p1_right_arrow_pressed"]
+[connection signal="pressed" from="Control/P2LeftArrow" to="." method="_on_p2_left_arrow_pressed"]
+[connection signal="pressed" from="Control/P2RightArrow" to="." method="_on_p2_right_arrow_pressed"]
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]

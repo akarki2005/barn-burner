@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bi0qkiv7i6wn7"]
+[gd_scene load_steps=29 format=3 uid="uid://bi0qkiv7i6wn7"]
 
-[ext_resource type="Script" path="res://Scenes/game.gd" id="1_8kwm6"]
+[ext_resource type="Script" path="res://Scenes/MainScenes/game.gd" id="1_8kwm6"]
 [ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
 [ext_resource type="PackedScene" uid="uid://bdmy3lue8kh57" path="res://Scenes/puck.tscn" id="3_084px"]
 [ext_resource type="PackedScene" uid="uid://c2itpx1jplduk" path="res://Scenes/redline.tscn" id="3_q7evj"]
@@ -17,6 +17,12 @@
 [ext_resource type="Script" path="res://Scenes/GameClock.gd" id="14_sl5i8"]
 [ext_resource type="Script" path="res://Scenes/P1Score.gd" id="15_u687c"]
 [ext_resource type="Script" path="res://Scenes/P2Score.gd" id="16_2sjf5"]
+[ext_resource type="Texture2D" uid="uid://bpciv185dras" path="res://Sprites/game_alert.bmp" id="18_4cagj"]
+[ext_resource type="Texture2D" uid="uid://cungr0elfxvlh" path="res://Sprites/goal_alert.bmp" id="19_kslyo"]
+[ext_resource type="Script" path="res://Scenes/GameAlert.gd" id="19_r2oe0"]
+[ext_resource type="Script" path="res://Scenes/GoalAlert.gd" id="21_aqduj"]
+[ext_resource type="Script" path="res://Scenes/GoalAlertLabel.gd" id="22_p3xib"]
+[ext_resource type="Script" path="res://Scenes/GameAlertLabel.gd" id="23_67m58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hg4b"]
 
@@ -209,6 +215,54 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("16_2sjf5")
+
+[node name="GameAlert" type="Sprite2D" parent="UserInterface"]
+position = Vector2(576, 106)
+scale = Vector2(10, 10)
+texture = ExtResource("18_4cagj")
+script = ExtResource("19_r2oe0")
+
+[node name="GoalAlert" type="Sprite2D" parent="UserInterface"]
+position = Vector2(100, -40)
+scale = Vector2(10, 10)
+texture = ExtResource("19_kslyo")
+script = ExtResource("21_aqduj")
+
+[node name="GoalAlertP1Label" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 80.0
+offset_right = 512.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "GOAL!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_p3xib")
+
+[node name="GoalAlertP2Label" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 80.0
+offset_right = 808.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "GOAL!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_p3xib")
+
+[node name="GameAlertLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 72.0
+offset_right = 696.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("23_67m58")
 
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="." method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player1" method="_on_goal_detector_left_body_entered"]
