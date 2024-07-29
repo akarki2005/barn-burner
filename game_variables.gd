@@ -4,6 +4,11 @@ extends Node
 var p1_team_number: int = 0
 var p2_team_number: int = 0
 
+var p1_score: int = 0
+var p2_score: int = 0
+
+var gameover = false
+
 var globalTeamSpritesheet = {
 	0 : ['ANA', preload("res://Sprites/teamSprites/ANA.bmp")],
 	1 : ['BOS', preload("res://Sprites/teamSprites/BOS.bmp")],

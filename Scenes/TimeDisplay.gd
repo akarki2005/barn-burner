@@ -27,8 +27,10 @@ func _physics_process(delta):
 
 
 func _on_game_clock_timeout():
-	await get_tree().create_timer(6.0).timeout
+	await get_tree().create_timer(6.0, false).timeout
 	end_of_regulation = true
+	if GameVariables.p1_score != GameVariables.p2_score:
+		gameover = true
 	counter = 0
 
 

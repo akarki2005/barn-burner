@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvmfccgj5p31s"]
+[gd_scene load_steps=10 format=3 uid="uid://dvmfccgj5p31s"]
 
 [ext_resource type="Script" path="res://Scenes/MainScenes/pre_game_screen.gd" id="1_swc2d"]
 [ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="1_wxchi"]
 [ext_resource type="Texture2D" uid="uid://d0htaaxtofd6x" path="res://Sprites/teamSprites/ANA.bmp" id="2_d5bir"]
 [ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="4_avriw"]
 [ext_resource type="PackedScene" uid="uid://dqd4cvixv7ind" path="res://Scenes/arrow.tscn" id="4_v7lnl"]
-[ext_resource type="Texture2D" uid="uid://cd6ccctfiqprx" path="res://Sprites/puck.bmp" id="6_4tgpw"]
+[ext_resource type="Texture2D" uid="uid://b4n7tlynnrqea" path="res://Sprites/UISprites/ReadyButton1.bmp" id="6_wrqrs"]
+[ext_resource type="Texture2D" uid="uid://dk8ykqs4g1nbt" path="res://Sprites/UISprites/ReadyButton3.bmp" id="7_i1kuq"]
+[ext_resource type="Texture2D" uid="uid://d0sakn0g7alyi" path="res://Sprites/UISprites/ReadyButton2.bmp" id="8_3cwqr"]
 
 [sub_resource type="Theme" id="Theme_b5guk"]
 default_font = ExtResource("4_avriw")
@@ -67,12 +69,14 @@ offset_bottom = 556.0
 
 [node name="PlayButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 261.0
-offset_right = 521.0
-offset_bottom = 277.0
-scale = Vector2(8, 8)
-texture_normal = ExtResource("6_4tgpw")
+offset_left = 487.0
+offset_top = 297.0
+offset_right = 522.0
+offset_bottom = 308.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_wrqrs")
+texture_pressed = ExtResource("7_i1kuq")
+texture_hover = ExtResource("8_3cwqr")
 
 [node name="P1Team" type="Label" parent="Control"]
 layout_mode = 0

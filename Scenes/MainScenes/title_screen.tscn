@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://sseucu08cv7b"]
+
+[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="1_mo6gb"]
+[ext_resource type="Script" path="res://Scenes/MainScenes/title_screen.gd" id="1_xybgm"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="2_t30gh"]
+[ext_resource type="Texture2D" uid="uid://bhj6ddbxltbwu" path="res://Sprites/UISprites/PlayButton1.bmp" id="3_yg575"]
+[ext_resource type="Texture2D" uid="uid://blkg8xtb1g332" path="res://Sprites/UISprites/PlayButton3.bmp" id="4_1ybji"]
+[ext_resource type="Texture2D" uid="uid://bynr43qb2wntm" path="res://Sprites/UISprites/PlayButton2.bmp" id="5_13s1p"]
+[ext_resource type="Texture2D" uid="uid://dhusuk2n0w1h1" path="res://Sprites/UISprites/QuitButton1.bmp" id="7_7riwe"]
+[ext_resource type="Texture2D" uid="uid://fmlhgka1bjwm" path="res://Sprites/UISprites/HelpButton1.bmp" id="7_bv737"]
+[ext_resource type="Texture2D" uid="uid://dw6c8x3p0jtsp" path="res://Sprites/UISprites/HelpButton3.bmp" id="8_0qrb1"]
+[ext_resource type="Texture2D" uid="uid://b2rk60cjhw8bo" path="res://Sprites/UISprites/QuitButton3.bmp" id="8_v2rx8"]
+[ext_resource type="Texture2D" uid="uid://bhbgkjhuxcm2o" path="res://Sprites/UISprites/QuitButton2.bmp" id="9_hrldp"]
+[ext_resource type="Texture2D" uid="uid://b5twesgpng8ei" path="res://Sprites/UISprites/HelpButton2.bmp" id="9_xf0gv"]
+
+[sub_resource type="Theme" id="Theme_jjbhn"]
+default_font = ExtResource("2_t30gh")
+default_font_size = 40
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_xybgm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(72, 40.5)
+texture = ExtResource("1_mo6gb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_jjbhn")
+
+[node name="VersionLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 585.0
+offset_right = 1140.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "alpha v1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameTitle" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 1159.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Barn Burner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 555.0
+offset_right = 199.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Created By
+Aayush Karki"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 225.0
+offset_right = 533.0
+offset_bottom = 236.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_yg575")
+texture_pressed = ExtResource("4_1ybji")
+texture_hover = ExtResource("5_13s1p")
+
+[node name="HelpButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 300.0
+offset_right = 533.0
+offset_bottom = 311.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("7_bv737")
+texture_pressed = ExtResource("8_0qrb1")
+texture_hover = ExtResource("9_xf0gv")
+
+[node name="QuitButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 375.0
+offset_right = 533.0
+offset_bottom = 386.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("7_7riwe")
+texture_pressed = ExtResource("8_v2rx8")
+texture_hover = ExtResource("9_hrldp")
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

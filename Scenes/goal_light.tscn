@@ -47,9 +47,10 @@ animations = [{
 }],
 "loop": true,
 "name": &"light_on",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [node name="GoalLight" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_wkpfd")
 animation = &"light_on"
+frame_progress = 0.267866

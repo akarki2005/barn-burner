@@ -6,6 +6,6 @@ func _ready():
 
 func _on_goal_scored():
 	play("light_on")
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	stop()
 	play("light_off")

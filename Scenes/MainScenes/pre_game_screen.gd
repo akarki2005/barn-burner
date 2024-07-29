@@ -40,8 +40,8 @@ const teamNamesAndSprites = {
 	31 : ['WASHINGTON', preload("res://Sprites/teamSprites/WSH.bmp")],
 }
 
-var p1_curr_team = 0
-var p2_curr_team = 0
+var p1_curr_team = GameVariables.p1_team_number
+var p2_curr_team = GameVariables.p2_team_number
 var num_of_teams = 32
 
 func _ready():

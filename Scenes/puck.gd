@@ -12,12 +12,12 @@ func _integrate_forces(state):
 		physics_frozen = false
 		state.linear_velocity = Vector2.ZERO
 		state.angular_velocity = 0
-		await get_tree().create_timer(3.0).timeout
-		state.transform.origin = initial_pos
-
-
-func despawn():
-	queue_free()
+		# wait is 3.1 seconds instead of 3 to ensure no conflict between puck respawning and player being in the way
+		# (this caused bugs where puck would respawn incorrectly, or in some cases continue moving or teleport off
+		# of the screen completely and break the game
+		await get_tree().create_timer(3.1, false).timeout
+		if not GameVariables.gameover:
+			state.transform = Transform2D(0.0, initial_pos)
 
 
 func _end_of_regulation():

@@ -11,5 +11,5 @@ func _on_goal_scored(scorer):
 		position = p1pos
 	else:
 		position = p2pos
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	position = dormantpos

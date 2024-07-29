@@ -50,22 +50,26 @@ var impulse = 400
 var p1initial_pos = Vector2(300, 359)
 var p2initial_pos = Vector2(852, 359)
 
+var p1holding_pos = Vector2(100, -300)
+var p2holding_pos = Vector2(200, -300)
+
 var p1score = 0
 var p2score = 0
 
 var gameover = false
 var ot = false
+var teams = 32
 
 var frozen = true
 
 func _ready():
 	# set sprite of players
 	if self.move_left == 'leftp1':
-		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p1_team_number][1]
+		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p1_team_number % teams][1]
 	else:
-		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p2_team_number][1]
+		teamSprite.texture = GameVariables.globalTeamSpritesheet[GameVariables.p2_team_number % teams][1]
 	teamSprite.scale = Vector2(1.2, 1.2)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	frozen = false
 
 func get_input():
@@ -87,20 +91,24 @@ func _physics_process(delta):
 			
 func reset():
 	if not gameover:
-		if self.move_left == 'leftp1':
-			self.position = p1initial_pos
+		if move_left == 'leftp1':
+			position = p1holding_pos
 			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = p1initial_pos
 		else:
-			self.position = p2initial_pos
+			position = p2holding_pos
 			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = p2initial_pos
 
 
 func _end_of_regulation():
 	if p1score == p2score:
 		frozen = true
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0, false).timeout
 		reset()
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0, false).timeout
 		frozen = false
 		ot = true
 	else:
@@ -114,10 +122,10 @@ func _on_goal_detector_left_body_entered(body):
 	if body is RigidBody2D:
 		p2score += 1
 		frozen = true
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0, false).timeout
 		if not gameover:
 			reset()
-			await get_tree().create_timer(3.0).timeout
+			await get_tree().create_timer(3.0, false).timeout
 			frozen = false
 
 
@@ -127,8 +135,8 @@ func _on_goal_detector_right_body_entered(body):
 	if body is RigidBody2D:
 		p1score += 1
 		frozen = true
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0, false).timeout
 		if not gameover:
 			reset()
-			await get_tree().create_timer(3.0).timeout
+			await get_tree().create_timer(3.0, false).timeout
 			frozen = false
