@@ -1,0 +1,35 @@
+/* Main CSS File */
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: lightsteelblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+#header-page {
+    margin: auto;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+}
+
+#header-page button {
+    width: 33.3%;
+    font-family:'Roboto Slab', serif;
+    font-size: x-large;
+    color: black;
+    background-color: lightslategray;
+    transition: all 0.5s;
+    float: left;
+    margin: 0px;
+    border: none;
+    padding: 8px;
+}
+
+#header-page button:hover {
+    background-color: lightsteelblue;
+}

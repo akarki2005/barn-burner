@@ -1,0 +1,97 @@
+<!--Main HTML file for Barn Burner Webpage-->
+<!doctype HTML>
+
+<!--Head-->
+<head>
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Link to JS-->
+    <script src="script.js"></script>
+    <!--Font-->
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<!--Body-->
+<body onload="showPage('home-page')">
+    <!--Header (always shown)-->
+    <div id="header-page" class="static">
+        <button onclick="showPage('home-page')">Home</button>
+        <button onclick="showPage('devlogs-page')">Devlogs</button>
+        <button onclick="showPage('builds-page')">Builds</button>
+        <br>
+    </div>
+    <br>
+    <!--Home Page-->
+    <div id="home-page" class="dynamic">
+        <br>
+        <h1>Barn Burner</h1>
+        <p>Barn Burner (noun - informal, Canadian): An event, typically a hockey game, 
+            that is very exciting or intense.
+        </p>
+        <h2>About</h2>
+        <p>
+           Barn Burner is an air hockey game created in the Godot game engine.
+           Currently in the alpha stage of development, the game supports local
+           multiplayer between two players, with 32 unique playable teams in the
+           game, inspired by the 32 teams in the NHL. Check out the "builds" section
+           of this webpage to give it a try!
+        </p>
+        <h2>Roadmap</h2>
+        <p>
+            I have lots planned over the next few months to improve upon the game,
+            to hopefully (maybe?) reach a point where I can consider the game complete.
+            Below is a non-exhaustive snapshot of the features and improvements that I
+            plan on implementing to the game in the future before a full release.
+        </p>
+        <ul>
+            <li>Boost mechanic (either auto-regenerating or boost pads, haven't decided yet)
+                <ul>
+                    <li>Powershot when puck is hit while boosted</li>
+                    <li>Bodycheck when player is hit while boosted</li>
+                </ul>
+            </li>
+            <li>Power-ups 
+                <ul>
+                    <li>Temporarily slow opponent</li>
+                    <li>Temporarily shrink opponent</li>
+                    <li>Temporarily increase own speed</li>
+                    <li>Temporarily increase own size</li>
+                </ul>
+            </li>
+            <li>Sound effects
+                <ul>
+                    <li>Ingame sounds (for shots, bodychecks, goals, etc.)</li>
+                    <li>UI sounds</li>
+                    <li>Title screen soundtrack?</li>
+                </ul>
+            </li>
+            <li>Art improvements
+                <ul>
+                    <li>Revamp title screen</li>
+                    <li>Convert pause/options menu to pixel art</li>
+                    <li>Standardize pixel size across game sprites</li>
+                </ul>
+            </li>
+            <li>Modes
+                <ul>
+                    <li>Singleplayer (season mode, playoffs mode etc.)</li>
+                    <li>Online Multiplayer (maybe)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--Devlogs Page-->
+    <div id="devlogs-page" class="dynamic">
+        <br>
+        <p>Nothing here yet... check back in mid August...</p>
+    </div>
+    <!--Builds Page-->
+    <div id="builds-page" class="dynamic">
+        <br>
+        <h2>alpha v1.0</h2>
+        <a href="https://drive.google.com/file/d/1fz8Q-TNAy949tfrQKQK9pka6E2KUizbJ/view?usp=drive_link" download="Barn Burner">alpha v1.0 download (windows)</a>
+    </div>
+</body>
