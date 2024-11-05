@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvmfccgj5p31s"]
+[gd_scene load_steps=11 format=3 uid="uid://dvmfccgj5p31s"]
 
 [ext_resource type="Script" path="res://Scenes/MainScenes/pre_game_screen.gd" id="1_swc2d"]
 [ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="1_wxchi"]
-[ext_resource type="Texture2D" uid="uid://d0htaaxtofd6x" path="res://Sprites/teamSprites/ANA.bmp" id="2_d5bir"]
+[ext_resource type="Texture2D" uid="uid://dsudchx4vd5co" path="res://Sprites/teamSprites/pushers_home.bmp" id="3_dydsa"]
 [ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="4_avriw"]
 [ext_resource type="PackedScene" uid="uid://dqd4cvixv7ind" path="res://Scenes/arrow.tscn" id="4_v7lnl"]
 [ext_resource type="Texture2D" uid="uid://b4n7tlynnrqea" path="res://Sprites/UISprites/ReadyButton1.bmp" id="6_wrqrs"]
 [ext_resource type="Texture2D" uid="uid://dk8ykqs4g1nbt" path="res://Sprites/UISprites/ReadyButton3.bmp" id="7_i1kuq"]
 [ext_resource type="Texture2D" uid="uid://d0sakn0g7alyi" path="res://Sprites/UISprites/ReadyButton2.bmp" id="8_3cwqr"]
+[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Scenes/arrow.bmp" id="9_ms3hk"]
 
 [sub_resource type="Theme" id="Theme_b5guk"]
 default_font = ExtResource("4_avriw")
@@ -23,12 +24,14 @@ texture = ExtResource("1_wxchi")
 [node name="P1Preview" type="Sprite2D" parent="."]
 position = Vector2(288, 324)
 scale = Vector2(10, 10)
-texture = ExtResource("2_d5bir")
+texture = ExtResource("3_dydsa")
+hframes = 32
 
 [node name="P2Preview" type="Sprite2D" parent="."]
 position = Vector2(864, 324)
 scale = Vector2(10, 10)
-texture = ExtResource("2_d5bir")
+texture = ExtResource("3_dydsa")
+hframes = 32
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -134,8 +137,19 @@ text = "PLAYER 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 27.0
+offset_bottom = 27.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("9_ms3hk")
+flip_h = true
+
 [connection signal="pressed" from="Control/P1LeftArrow" to="." method="_on_p1_left_arrow_pressed"]
 [connection signal="pressed" from="Control/P1RightArrow" to="." method="_on_p1_right_arrow_pressed"]
 [connection signal="pressed" from="Control/P2LeftArrow" to="." method="_on_p2_left_arrow_pressed"]
 [connection signal="pressed" from="Control/P2RightArrow" to="." method="_on_p2_right_arrow_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

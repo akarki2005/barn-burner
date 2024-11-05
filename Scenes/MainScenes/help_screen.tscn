@@ -43,7 +43,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "The objective of the game is to score more goals than your opponent.
-Games have 2 minutes of regulation time, after which the player with the
+Games have 90 seconds of regulation time, after which the player with the
 higher score is declared the winner.
 If score is tied after regulation, sudden death overtime is played, where
 the next player to score wins the game. "
@@ -67,7 +67,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "PLAYER 1
-W,A,S,D to move"
+W,A,S,D to move
+C to boost"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,7 +77,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "PLAYER 2
-Arrows to move"
+I,J,K,L to move
+N to boost"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -84,7 +86,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "To pause the game at anytime, press the space key."
+text = "To pause the game at anytime, press the escape key."
 horizontal_alignment = 1
 vertical_alignment = 1
 

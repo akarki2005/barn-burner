@@ -17,7 +17,7 @@ func _alert(event):
 		text = 'FINAL'
 	elif event == 'end_of_reg':
 		visible = true
-		text = 'END OF REG'
+		text = 'END OF REG.'
 		await get_tree().create_timer(3.0, false).timeout
 		visible = false
 	else:

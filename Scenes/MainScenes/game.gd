@@ -6,6 +6,14 @@ var ot = false
 
 var teams = 32
 
+var boost_meter_frames = 36
+
+const boost_meter_sprites = [
+	preload("res://Sprites/playerInfoSprites/boost_bar_regen.bmp"),
+	preload("res://Sprites/playerInfoSprites/boost_bar_deplete.bmp"),
+	preload("res://Sprites/playerInfoSprites/boost_bar_locked.bmp")
+]
+
 @onready var pause_menu = $UserInterface/PauseMenu
 @onready var end_game_menu = $UserInterface/EndGameMenu
 
@@ -20,6 +28,7 @@ func game_over():
 
 
 func _ready():
+	
 	GameVariables.p1_score = 0
 	GameVariables.p2_score = 0
 	GameVariables.gameover = false
@@ -31,8 +40,37 @@ func _ready():
 	var p2teamlabel = $UserInterface/P2TeamLabel
 	var p1_team_number = GameVariables.p1_team_number
 	var p2_team_number = GameVariables.p2_team_number
-	p1teamlabel.text = GameVariables.globalTeamSpritesheet[p1_team_number % teams][0]
-	p2teamlabel.text = GameVariables.globalTeamSpritesheet[p2_team_number % teams][0]
+	p1teamlabel.text = GameVariables.teamCitiesAndAbbreviations[p1_team_number % teams][1]
+	p2teamlabel.text = GameVariables.teamCitiesAndAbbreviations[p2_team_number % teams][1]
+	
+	# initialize boost meters
+	var p1_boost_meter = $UserInterface/P1BoostMeter
+	var p2_boost_meter = $UserInterface/P2BoostMeter
+
+
+func _physics_process(delta):
+	boost_display_helper()
+
+
+func boost_display_helper():
+	
+	# Player 1
+	if $Player1.prev_boosting:
+		$UserInterface/P1BoostMeter.texture = boost_meter_sprites[1]
+	elif $Player1.lock_boost:
+		$UserInterface/P1BoostMeter.texture = boost_meter_sprites[2]
+	else:
+		$UserInterface/P1BoostMeter.texture = boost_meter_sprites[0]
+	$UserInterface/P1BoostMeter.frame = ceil(boost_meter_frames * ($Player1.curr_boost / $Player1.max_boost))
+	
+	# Player 2
+	if $Player2.prev_boosting:
+		$UserInterface/P2BoostMeter.texture = boost_meter_sprites[1]
+	elif $Player2.lock_boost:
+		$UserInterface/P2BoostMeter.texture = boost_meter_sprites[2]
+	else:
+		$UserInterface/P2BoostMeter.texture = boost_meter_sprites[0]
+	$UserInterface/P2BoostMeter.frame = ceil(boost_meter_frames * ($Player2.curr_boost / $Player2.max_boost))
 
 
 func _on_goal_scored(scorer):
@@ -65,6 +103,7 @@ func _on_goal_detector_right_body_entered(body):
 
 
 func _on_game_clock_timeout():
+	$UserInterface/TimeDisplay.text = '0:00'
 	var player1 = $Player1
 	var player2 = $Player2
 	var puck = $Puck

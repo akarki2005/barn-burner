@@ -7,7 +7,7 @@ var gameover = false
 
 func _physics_process(delta):
 	counter += 1
-	var time = $GameClock.time_left
+	var time = ceil($GameClock.time_left)
 	if time > 0:
 		var mins = int(time) / 60
 		var secs = int(time) % 60

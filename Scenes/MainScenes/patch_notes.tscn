@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://bibbho2mnpchq"]
+
+[ext_resource type="Script" path="res://patch_notes.gd" id="1_3cmxg"]
+[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="2_yblp5"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="3_ss1hr"]
+[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Scenes/arrow.bmp" id="4_ve55j"]
+
+[node name="patch_notes" type="Node2D"]
+script = ExtResource("1_3cmxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(72, 40.5)
+texture = ExtResource("2_yblp5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 1159.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ss1hr")
+theme_override_font_sizes/font_size = 75
+text = "alpha v1.1 patch notes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 27.0
+offset_bottom = 27.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_ve55j")
+flip_h = true
+
+[node name="newFeatures" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 1052.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ss1hr")
+theme_override_font_sizes/font_size = 40
+text = "- new title screen and logo
+- regulation time reduced from 2:00 to 1:30
+- added boost mechanic; players can boost to increase movement
+speed by 50% if they have boost available (boost bar has some green)
+"
+vertical_alignment = 1
+
+[node name="newFeaturesHeader" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 75.0
+offset_right = 1052.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ss1hr")
+theme_override_font_sizes/font_size = 50
+text = "New Features and Gameplay Changes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bugFixesHeader" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 325.0
+offset_right = 1052.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ss1hr")
+theme_override_font_sizes/font_size = 50
+text = "Bug Fixes and General Improvements"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bugFixes" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 1052.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ss1hr")
+theme_override_font_sizes/font_size = 40
+text = "- framerate no longer capped at 30fps (will now match display)
+- fixed a bug where the timer was showing the floor rather than the
+ceiling function of the time left, leading to situations where goals
+could be scored with 0 seconds on the clock
+- general refactoring of code to improve performance/readability
+"
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]
