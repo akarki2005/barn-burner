@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cungr0elfxvlh"
-path="res://.godot/imported/goal_alert.bmp-a8995d28296d492a09c72f67b7beed28.ctex"
+uid="uid://jms5rcv4l6kd"
+path="res://.godot/imported/ice.bmp-325a2ead1f3091ae738233421e35c275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/goal_alert.bmp"
-dest_files=["res://.godot/imported/goal_alert.bmp-a8995d28296d492a09c72f67b7beed28.ctex"]
+source_file="res://Sprites/BackgroundSprites/ice.bmp"
+dest_files=["res://.godot/imported/ice.bmp-325a2ead1f3091ae738233421e35c275.ctex"]
 
 [params]
 

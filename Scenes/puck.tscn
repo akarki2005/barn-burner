@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdmy3lue8kh57"]
 
 [ext_resource type="Texture2D" uid="uid://cd6ccctfiqprx" path="res://Sprites/puck.bmp" id="1_anklo"]
-[ext_resource type="Script" path="res://Scenes/puck.gd" id="1_jpmpl"]
+[ext_resource type="Script" path="res://Scripts/Game/puck.gd" id="1_jpmpl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nnlne"]
 bounce = 1.0
@@ -16,9 +16,9 @@ contact_monitor = true
 script = ExtResource("1_jpmpl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(3.6, 3.6)
 texture = ExtResource("1_anklo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(2.7, 2.7)
 shape = SubResource("CircleShape2D_lmsgt")

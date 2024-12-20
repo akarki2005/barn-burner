@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://53fjaxytds18"]
 
-[ext_resource type="Script" path="res://HelpScreen.gd" id="1_20q40"]
-[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="2_46o8y"]
-[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="3_s2w4a"]
-[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Scenes/arrow.bmp" id="4_202ru"]
+[ext_resource type="Script" path="res://Scripts/UI/HelpScreen.gd" id="1_2mbqy"]
+[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/BackgroundSprites/ice.bmp" id="2_46o8y"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="3_s2w4a"]
+[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Sprites/UISprites/arrow.bmp" id="4_202ru"]
 
 [sub_resource type="Theme" id="Theme_seq6w"]
 default_font = ExtResource("3_s2w4a")
 default_font_size = 50
 
 [node name="HelpScreen" type="Node2D"]
-script = ExtResource("1_20q40")
+script = ExtResource("1_2mbqy")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

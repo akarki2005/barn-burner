@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2ox4wf2wgmad"]
 
-[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="1_jqntt"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="1_jqntt"]
 
 [sub_resource type="Theme" id="Theme_cpt2f"]
 default_font = ExtResource("1_jqntt")

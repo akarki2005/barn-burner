@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvmfccgj5p31s"]
+[gd_scene load_steps=12 format=3 uid="uid://dvmfccgj5p31s"]
 
-[ext_resource type="Script" path="res://Scenes/MainScenes/pre_game_screen.gd" id="1_swc2d"]
-[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/ice.bmp" id="1_wxchi"]
-[ext_resource type="Texture2D" uid="uid://dsudchx4vd5co" path="res://Sprites/teamSprites/pushers_home.bmp" id="3_dydsa"]
-[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="4_avriw"]
+[ext_resource type="Script" path="res://Scripts/UI/pre_game_screen.gd" id="1_swc2d"]
+[ext_resource type="Texture2D" uid="uid://jms5rcv4l6kd" path="res://Sprites/BackgroundSprites/ice.bmp" id="1_wxchi"]
+[ext_resource type="Texture2D" uid="uid://dpg14w8sg48xm" path="res://Sprites/teamSprites/pushers_away.bmp" id="3_ils3i"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="4_avriw"]
 [ext_resource type="PackedScene" uid="uid://dqd4cvixv7ind" path="res://Scenes/arrow.tscn" id="4_v7lnl"]
 [ext_resource type="Texture2D" uid="uid://b4n7tlynnrqea" path="res://Sprites/UISprites/ReadyButton1.bmp" id="6_wrqrs"]
 [ext_resource type="Texture2D" uid="uid://dk8ykqs4g1nbt" path="res://Sprites/UISprites/ReadyButton3.bmp" id="7_i1kuq"]
 [ext_resource type="Texture2D" uid="uid://d0sakn0g7alyi" path="res://Sprites/UISprites/ReadyButton2.bmp" id="8_3cwqr"]
-[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Scenes/arrow.bmp" id="9_ms3hk"]
+[ext_resource type="Texture2D" uid="uid://c5had5y8knlw4" path="res://Sprites/UISprites/arrow.bmp" id="9_ms3hk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1w1ku"]
+load_path = "res://.godot/imported/pushers_home.bmp-57f8060eac527377c00cde90d6f0464f.ctex"
 
 [sub_resource type="Theme" id="Theme_b5guk"]
 default_font = ExtResource("4_avriw")
@@ -24,13 +27,13 @@ texture = ExtResource("1_wxchi")
 [node name="P1Preview" type="Sprite2D" parent="."]
 position = Vector2(288, 324)
 scale = Vector2(10, 10)
-texture = ExtResource("3_dydsa")
+texture = ExtResource("3_ils3i")
 hframes = 32
 
 [node name="P2Preview" type="Sprite2D" parent="."]
 position = Vector2(864, 324)
 scale = Vector2(10, 10)
-texture = ExtResource("3_dydsa")
+texture = SubResource("CompressedTexture2D_1w1ku")
 hframes = 32
 
 [node name="Control" type="Control" parent="."]
@@ -48,12 +51,35 @@ offset_right = 229.0
 offset_bottom = 556.0
 flip_h = true
 
+[node name="Label" type="Label" parent="Control/P1LeftArrow"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 1.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="P1RightArrow" parent="Control" instance=ExtResource("4_v7lnl")]
 layout_mode = 0
 offset_left = 298.0
 offset_top = 540.0
 offset_right = 314.0
 offset_bottom = 556.0
+
+[node name="Label" type="Label" parent="Control/P1RightArrow"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="P2LeftArrow" parent="Control" instance=ExtResource("4_v7lnl")]
 layout_mode = 0
@@ -63,12 +89,35 @@ offset_right = 806.0
 offset_bottom = 556.0
 flip_h = true
 
+[node name="Label" type="Label" parent="Control/P2LeftArrow"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 1.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="P2RightArrow" parent="Control" instance=ExtResource("4_v7lnl")]
 layout_mode = 0
 offset_left = 875.0
 offset_top = 540.0
 offset_right = 891.0
 offset_bottom = 556.0
+
+[node name="Label" type="Label" parent="Control/P2RightArrow"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="TextureButton" parent="Control"]
 layout_mode = 0
@@ -105,8 +154,9 @@ vertical_alignment = 1
 
 [node name="Header" type="Label" parent="Control"]
 layout_mode = 0
+offset_top = 15.0
 offset_right = 1150.0
-offset_bottom = 70.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "TEAM SELECTION"
@@ -115,25 +165,25 @@ vertical_alignment = 1
 
 [node name="P1Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 65.0
 offset_top = 106.0
-offset_right = 518.0
+offset_right = 522.0
 offset_bottom = 177.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
-text = "PLAYER 1"
+text = "AWAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="P2Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 633.0
+offset_left = 637.0
 offset_top = 105.0
-offset_right = 1094.0
+offset_right = 1098.0
 offset_bottom = 179.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
-text = "PLAYER 2"
+text = "HOME"
 horizontal_alignment = 1
 vertical_alignment = 1
 

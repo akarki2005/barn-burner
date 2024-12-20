@@ -14,9 +14,6 @@ var speed = 300
 var boost_speed = 450
 var impulse = 400
 
-var p1initial_pos = Vector2(300, 359)
-var p2initial_pos = Vector2(852, 359)
-
 var p1holding_pos = Vector2(100, -300)
 var p2holding_pos = Vector2(200, -300)
 
@@ -41,8 +38,10 @@ func _ready():
 	curr_boost = max_boost
 	# set sprite of players
 	if self.move_left == 'leftp1':
+		teamSprite.texture = load("res://Sprites/teamSprites/pushers_away.bmp")
 		teamSprite.frame = GameVariables.p1_team_number % teams
 	else:
+		teamSprite.texture = load("res://Sprites/teamSprites/pushers_home.bmp")
 		teamSprite.frame = GameVariables.p2_team_number % teams
 	await get_tree().create_timer(3.0, false).timeout
 	frozen = false
@@ -118,12 +117,12 @@ func reset():
 		position = p1holding_pos
 		velocity = Vector2.ZERO
 		await get_tree().create_timer(0.01, false).timeout
-		position = p1initial_pos
+		position = GameVariables.p1initial_pos
 	else:
 		position = p2holding_pos
 		velocity = Vector2.ZERO
 		await get_tree().create_timer(0.01, false).timeout
-		position = p2initial_pos
+		position = GameVariables.p2initial_pos
 
 
 func _end_of_regulation():

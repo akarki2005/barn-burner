@@ -3,7 +3,7 @@ extends RigidBody2D
 var p1score = 0
 var p2score = 0
 
-const initial_pos = Vector2(576, 359)
+const initial_pos = Vector2(576, 324)
 
 var physics_frozen = false
 

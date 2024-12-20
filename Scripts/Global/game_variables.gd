@@ -7,6 +7,11 @@ var p2_team_number: int = 0
 var p1_score: int = 0
 var p2_score: int = 0
 
+const p1initial_pos = Vector2(300, 324)
+const p2initial_pos = Vector2(852, 324)
+
+const num_teams = 32
+
 var gameover = false
 
 const teamCitiesAndAbbreviations = [

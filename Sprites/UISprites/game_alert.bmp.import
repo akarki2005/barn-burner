@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://girw4kbvk4sq"
-path="res://.godot/imported/redline.bmp-1bc6a1576c5d6868ed7eeaa68748e565.ctex"
+uid="uid://bpciv185dras"
+path="res://.godot/imported/game_alert.bmp-52a58256a738670202a4c2a01c1421a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/redline.bmp"
-dest_files=["res://.godot/imported/redline.bmp-1bc6a1576c5d6868ed7eeaa68748e565.ctex"]
+source_file="res://Sprites/UISprites/game_alert.bmp"
+dest_files=["res://.godot/imported/game_alert.bmp-52a58256a738670202a4c2a01c1421a9.ctex"]
 
 [params]
 

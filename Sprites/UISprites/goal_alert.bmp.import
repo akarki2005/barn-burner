@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nb4ukc87mp3o"
-path="res://.godot/imported/goal_light_sheet.bmp-7eea3fa9fc0e9512428212ff13407e7a.ctex"
+uid="uid://cungr0elfxvlh"
+path="res://.godot/imported/goal_alert.bmp-c7bf80f02a49496424ae805b006adfa1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/goal_light_sheet.bmp"
-dest_files=["res://.godot/imported/goal_light_sheet.bmp-7eea3fa9fc0e9512428212ff13407e7a.ctex"]
+source_file="res://Sprites/UISprites/goal_alert.bmp"
+dest_files=["res://.godot/imported/goal_alert.bmp-c7bf80f02a49496424ae805b006adfa1.ctex"]
 
 [params]
 

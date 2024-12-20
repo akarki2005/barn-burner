@@ -1,6 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2itpx1jplduk"]
+[gd_scene format=3 uid="uid://dn22n4k2ff23i"]
 
-[ext_resource type="Texture2D" uid="uid://girw4kbvk4sq" path="res://Sprites/redline.bmp" id="1_y7fa2"]
-
-[node name="Redline" type="Sprite2D"]
-texture = ExtResource("1_y7fa2")
+[node name="redline" type="Sprite2D"]

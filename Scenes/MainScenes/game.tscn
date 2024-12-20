@@ -1,32 +1,35 @@
-[gd_scene load_steps=33 format=3 uid="uid://bi0qkiv7i6wn7"]
+[gd_scene load_steps=36 format=3 uid="uid://bi0qkiv7i6wn7"]
 
-[ext_resource type="Script" path="res://Scenes/MainScenes/game.gd" id="1_8kwm6"]
+[ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_oddul"]
 [ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
 [ext_resource type="PackedScene" uid="uid://bdmy3lue8kh57" path="res://Scenes/puck.tscn" id="3_084px"]
-[ext_resource type="PackedScene" uid="uid://c2itpx1jplduk" path="res://Scenes/redline.tscn" id="3_q7evj"]
-[ext_resource type="PackedScene" uid="uid://dcjpgn004wj21" path="res://Scenes/crease.tscn" id="4_0b8qr"]
+[ext_resource type="Script" path="res://Scripts/Game/Ice.gd" id="3_ibexc"]
+[ext_resource type="PackedScene" uid="uid://dn22n4k2ff23i" path="res://Scenes/redline.tscn" id="3_q7evj"]
 [ext_resource type="PackedScene" uid="uid://bjmw12u4pn1rr" path="res://Scenes/ice.tscn" id="4_whc5v"]
 [ext_resource type="PackedScene" uid="uid://b2wvpdttswyui" path="res://Scenes/boards.tscn" id="5_05yok"]
-[ext_resource type="PackedScene" uid="uid://c47saau2j8r4g" path="res://Scenes/faceoff_circle.tscn" id="5_uv7uw"]
-[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://m5x7.ttf" id="9_l3ydf"]
-[ext_resource type="Texture2D" uid="uid://dxxeild4tycr2" path="res://Sprites/scoreboard.bmp" id="9_s2bg7"]
+[ext_resource type="Texture2D" uid="uid://1jaeplvdxpur" path="res://Sprites/BackgroundSprites/redline.bmp" id="5_qha0b"]
+[ext_resource type="Texture2D" uid="uid://ctnglpy0gidg1" path="res://Sprites/BackgroundSprites/centerice.bmp" id="6_r5ybu"]
+[ext_resource type="Script" path="res://Scripts/Game/CenterIceLogo.gd" id="7_cttf6"]
+[ext_resource type="Texture2D" uid="uid://c1ppumxd0orle" path="res://Sprites/BackgroundSprites/goaliecrease.bmp" id="8_o42ed"]
 [ext_resource type="PackedScene" uid="uid://bp6dj0wuu813j" path="res://Scenes/goal_light.tscn" id="10_8tngk"]
-[ext_resource type="Script" path="res://Scenes/UserInterface.gd" id="10_dsy6l"]
-[ext_resource type="Script" path="res://Scenes/goal_light.gd" id="11_wvyi8"]
-[ext_resource type="Script" path="res://Scenes/TimeDisplay.gd" id="13_t207e"]
-[ext_resource type="Script" path="res://Scenes/GameClock.gd" id="14_sl5i8"]
-[ext_resource type="Script" path="res://Scenes/P1Score.gd" id="15_u687c"]
-[ext_resource type="Script" path="res://Scenes/P2Score.gd" id="16_2sjf5"]
-[ext_resource type="Texture2D" uid="uid://bpciv185dras" path="res://Sprites/game_alert.bmp" id="18_4cagj"]
-[ext_resource type="Texture2D" uid="uid://cungr0elfxvlh" path="res://Sprites/goal_alert.bmp" id="19_kslyo"]
-[ext_resource type="Script" path="res://Scenes/GameAlert.gd" id="19_r2oe0"]
-[ext_resource type="Script" path="res://Scenes/GoalAlert.gd" id="21_aqduj"]
-[ext_resource type="Script" path="res://Scenes/GoalAlertLabel.gd" id="22_p3xib"]
-[ext_resource type="Script" path="res://Scenes/GameAlertLabel.gd" id="23_67m58"]
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="12_vgiad"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/UserInterface.gd" id="13_p207g"]
+[ext_resource type="Texture2D" uid="uid://dxxeild4tycr2" path="res://Sprites/UISprites/scoreboard.bmp" id="14_1ibud"]
+[ext_resource type="Script" path="res://Scripts/Game/goal_light.gd" id="16_bu6nx"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/TimeDisplay.gd" id="17_gun7a"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/GameClock.gd" id="18_jwlo5"]
+[ext_resource type="Script" path="res://Scripts/Game/P1Score.gd" id="19_lmo6v"]
+[ext_resource type="Script" path="res://Scripts/Game/P2Score.gd" id="20_ajges"]
+[ext_resource type="Texture2D" uid="uid://bpciv185dras" path="res://Sprites/UISprites/game_alert.bmp" id="21_n1r4v"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/GameAlert.gd" id="22_7imrs"]
+[ext_resource type="Texture2D" uid="uid://cungr0elfxvlh" path="res://Sprites/UISprites/goal_alert.bmp" id="23_qmvyy"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/GoalAlert.gd" id="24_qcl47"]
 [ext_resource type="PackedScene" uid="uid://bsxk2cr4us580" path="res://Scenes/MainScenes/pause_menu.tscn" id="24_u37gx"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/GoalAlertLabel.gd" id="25_l37b4"]
 [ext_resource type="PackedScene" uid="uid://d2ox4wf2wgmad" path="res://Scenes/MainScenes/end_game_menu.tscn" id="25_py3oa"]
-[ext_resource type="Script" path="res://Scenes/MainScenes/end_game_menu.gd" id="26_88yo0"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/GameAlertLabel.gd" id="26_dggg2"]
 [ext_resource type="Texture2D" uid="uid://tswxnfqriv4g" path="res://Sprites/playerInfoSprites/boost_bar_regen.bmp" id="27_3c1yj"]
+[ext_resource type="Script" path="res://Scripts/UI/end_game_menu.gd" id="29_y0hqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hg4b"]
 
@@ -37,53 +40,56 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elutc"]
 
 [sub_resource type="Theme" id="Theme_kwpcf"]
-default_font = ExtResource("9_l3ydf")
+default_font = ExtResource("12_vgiad")
 default_font_size = 50
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_8kwm6")
+script = ExtResource("1_oddul")
 
 [node name="Background" type="Node2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="Ice" type="Node2D" parent="Background"]
-
-[node name="Ice Surface" parent="Background/Ice" instance=ExtResource("4_whc5v")]
+[node name="Ice Surface" parent="Background" instance=ExtResource("4_whc5v")]
 scale = Vector2(72, 40.5)
+
+[node name="Ice" type="Node2D" parent="Background"]
+script = ExtResource("3_ibexc")
 
 [node name="GoallineLeft" parent="Background/Ice" instance=ExtResource("3_q7evj")]
 position = Vector2(-569, 0)
-scale = Vector2(0.87, 20)
+scale = Vector2(0.87, 30)
+texture = ExtResource("5_qha0b")
 
 [node name="GoallineRight" parent="Background/Ice" instance=ExtResource("3_q7evj")]
 position = Vector2(569, 0)
-scale = Vector2(0.87, 20)
+scale = Vector2(0.87, 30)
+texture = ExtResource("5_qha0b")
 
-[node name="CreaseLeft" parent="Background/Ice" instance=ExtResource("4_0b8qr")]
-position = Vector2(-450, 34.75)
-scale = Vector2(14, 14)
+[node name="CenterIceOutline" type="Sprite2D" parent="Background/Ice"]
+scale = Vector2(10, 10)
+texture = ExtResource("6_r5ybu")
 
-[node name="CreaseRight" parent="Background/Ice" instance=ExtResource("4_0b8qr")]
-position = Vector2(450, 34.75)
-rotation = 3.14159
-scale = Vector2(14, 14)
+[node name="CenterIceLogo" type="Sprite2D" parent="Background/Ice"]
+scale = Vector2(10, 10)
+hframes = 32
+script = ExtResource("7_cttf6")
 
-[node name="FaceoffCircle" parent="Background/Ice" instance=ExtResource("5_uv7uw")]
-position = Vector2(0, 34.75)
-scale = Vector2(14, 14)
+[node name="CreaseRight" type="Sprite2D" parent="Background/Ice"]
+position = Vector2(467, 0)
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("8_o42ed")
 
-[node name="CenterLineTop" parent="Background/Ice" instance=ExtResource("3_q7evj")]
-position = Vector2(0, -160)
-scale = Vector2(0.87, 10.38)
-
-[node name="Redline" parent="Background/Ice" instance=ExtResource("3_q7evj")]
-position = Vector2(0, 230)
-scale = Vector2(0.87, 10.38)
+[node name="CreaseLeft" type="Sprite2D" parent="Background/Ice"]
+position = Vector2(-467, 0)
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("8_o42ed")
 
 [node name="Boards" type="Node2D" parent="Background"]
 
 [node name="Bottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
-position = Vector2(0, 317)
+position = Vector2(0, 250)
 scale = Vector2(57.6, 0.7)
 
 [node name="Top" parent="Background/Boards" instance=ExtResource("5_05yok")]
@@ -91,20 +97,20 @@ position = Vector2(0, -250)
 scale = Vector2(57.6, 0.7)
 
 [node name="LeftTop" parent="Background/Boards" instance=ExtResource("5_05yok")]
-position = Vector2(-569, -160)
-scale = Vector2(0.7, 8.275)
+position = Vector2(-569, -175)
+scale = Vector2(0.7, 7)
 
 [node name="LeftBottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
-position = Vector2(-569, 230)
-scale = Vector2(0.7, 8.275)
+position = Vector2(-569, 175)
+scale = Vector2(0.7, 7)
 
 [node name="RightTop" parent="Background/Boards" instance=ExtResource("5_05yok")]
-position = Vector2(569, -160)
-scale = Vector2(0.7, 8.275)
+position = Vector2(569, -175)
+scale = Vector2(0.7, 7)
 
 [node name="RightBottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
-position = Vector2(569, 230)
-scale = Vector2(0.7, 8.275)
+position = Vector2(569, 175)
+scale = Vector2(0.7, 7)
 
 [node name="PlayerBlockerLeft" type="StaticBody2D" parent="Background/Boards"]
 position = Vector2(-569, 35)
@@ -113,6 +119,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/PlayerBlockerLeft"]
+position = Vector2(0, -3)
+scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_7hg4b")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/Boards"]
@@ -122,9 +130,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/StaticBody2D"]
+position = Vector2(0, -3)
+scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_prnau")
 
 [node name="GoalDetectorLeft" type="Area2D" parent="Background"]
+position = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorLeft"]
 position = Vector2(-645, 35)
@@ -132,6 +143,7 @@ scale = Vector2(1, 29)
 shape = SubResource("RectangleShape2D_bowmq")
 
 [node name="GoalDetectorRight" type="Area2D" parent="Background"]
+position = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorRight"]
 position = Vector2(645, 35)
@@ -139,7 +151,7 @@ scale = Vector2(1, 29)
 shape = SubResource("RectangleShape2D_elutc")
 
 [node name="Player1" parent="." instance=ExtResource("2_d2tic")]
-position = Vector2(300, 359)
+position = Vector2(300, 324)
 move_left = "leftp1"
 move_right = "rightp1"
 move_up = "upp1"
@@ -147,7 +159,7 @@ move_down = "downp1"
 boost = "boostp1"
 
 [node name="Player2" parent="." instance=ExtResource("2_d2tic")]
-position = Vector2(852, 359)
+position = Vector2(852, 324)
 move_left = "leftp2"
 move_right = "rightp2"
 move_up = "upp2"
@@ -155,7 +167,7 @@ move_down = "downp2"
 boost = "boostp2"
 
 [node name="Puck" parent="." instance=ExtResource("3_084px")]
-position = Vector2(576, 359)
+position = Vector2(576, 324)
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -163,23 +175,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_kwpcf")
-script = ExtResource("10_dsy6l")
+script = ExtResource("13_p207g")
 
 [node name="Scoreboard" type="Sprite2D" parent="UserInterface"]
 position = Vector2(576, 42)
 scale = Vector2(10, 10)
-texture = ExtResource("9_s2bg7")
+texture = ExtResource("14_1ibud")
 
 [node name="GoalLightP1" parent="UserInterface" instance=ExtResource("10_8tngk")]
 position = Vector2(295, 35)
 scale = Vector2(4, 4)
 frame_progress = 0.972638
-script = ExtResource("11_wvyi8")
+script = ExtResource("16_bu6nx")
 
 [node name="GoalLightP2" parent="UserInterface" instance=ExtResource("10_8tngk")]
 position = Vector2(857, 35)
 scale = Vector2(4, 4)
-script = ExtResource("11_wvyi8")
+script = ExtResource("16_bu6nx")
 
 [node name="TimeDisplay" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -191,12 +203,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1:30"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("13_t207e")
+script = ExtResource("17_gun7a")
 
 [node name="GameClock" type="Timer" parent="UserInterface/TimeDisplay"]
 wait_time = 90.0
 one_shot = true
-script = ExtResource("14_sl5i8")
+script = ExtResource("18_jwlo5")
 
 [node name="P1Score" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -208,7 +220,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("15_u687c")
+script = ExtResource("19_lmo6v")
 
 [node name="P2Score" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -220,19 +232,19 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("16_2sjf5")
+script = ExtResource("20_ajges")
 
 [node name="GameAlert" type="Sprite2D" parent="UserInterface"]
 position = Vector2(576, 106)
 scale = Vector2(10, 10)
-texture = ExtResource("18_4cagj")
-script = ExtResource("19_r2oe0")
+texture = ExtResource("21_n1r4v")
+script = ExtResource("22_7imrs")
 
 [node name="GoalAlert" type="Sprite2D" parent="UserInterface"]
 position = Vector2(100, -40)
 scale = Vector2(10, 10)
-texture = ExtResource("19_kslyo")
-script = ExtResource("21_aqduj")
+texture = ExtResource("23_qmvyy")
+script = ExtResource("24_qcl47")
 
 [node name="GoalAlertP1Label" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -244,7 +256,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "GOAL!"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("22_p3xib")
+script = ExtResource("25_l37b4")
 
 [node name="GoalAlertP2Label" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -256,7 +268,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "GOAL!"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("22_p3xib")
+script = ExtResource("25_l37b4")
 
 [node name="GameAlertLabel" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -268,7 +280,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-script = ExtResource("23_67m58")
+script = ExtResource("26_dggg2")
 
 [node name="P1TeamLabel" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -294,56 +306,56 @@ vertical_alignment = 1
 process_mode = 3
 layout_mode = 1
 offset_left = 550.0
-offset_top = 336.0
+offset_top = 303.0
 offset_right = 550.0
-offset_bottom = 336.0
+offset_bottom = 303.0
 scale = Vector2(1.5, 1.5)
 
 [node name="EndGameMenu" parent="UserInterface" instance=ExtResource("25_py3oa")]
 layout_mode = 1
 offset_left = 550.0
-offset_top = 388.0
+offset_top = 355.0
 offset_right = 550.0
-offset_bottom = 388.0
+offset_bottom = 355.0
 scale = Vector2(1.5, 1.5)
-script = ExtResource("26_88yo0")
+script = ExtResource("29_y0hqd")
 
 [node name="P1BoostMeter" type="Sprite2D" parent="UserInterface"]
-position = Vector2(135, 57)
+position = Vector2(114, 615)
 scale = Vector2(5, 5)
 texture = ExtResource("27_3c1yj")
 hframes = 37
 
 [node name="P1BoostLabel" type="Label" parent="UserInterface/P1BoostMeter"]
-offset_left = -10.0
-offset_top = -13.0
-offset_right = 30.0
-offset_bottom = 10.0
+offset_left = 22.0
+offset_top = -5.0
+offset_right = 62.0
+offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_l3ydf")
-text = "BOOST"
-horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("12_vgiad")
+text = "120"
 vertical_alignment = 1
 
 [node name="P2BoostMeter" type="Sprite2D" parent="UserInterface"]
-position = Vector2(1017, 57)
+position = Vector2(1038, 615)
 rotation = 3.14159
 scale = Vector2(5, 5)
 texture = ExtResource("27_3c1yj")
 hframes = 37
 
 [node name="P2BoostLabel" type="Label" parent="UserInterface/P2BoostMeter"]
-offset_left = 10.0
-offset_top = 13.0
-offset_right = 50.0
-offset_bottom = 36.0
+offset_left = 42.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 25.0
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_l3ydf")
-text = "BOOST"
-horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("12_vgiad")
+text = "120
+"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="." method="_on_goal_detector_left_body_entered"]

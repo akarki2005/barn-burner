@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6iafht4s8e23"
-path="res://.godot/imported/pusher_red.bmp-23d0a9a7d5f12017d5c4df5218815f33.ctex"
+uid="uid://bphtgfs5ui7b8"
+path="res://.godot/imported/faceoff_circle.bmp-afe018481bff766e5ac5c4652bdde6c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pusher_red.bmp"
-dest_files=["res://.godot/imported/pusher_red.bmp-23d0a9a7d5f12017d5c4df5218815f33.ctex"]
+source_file="res://Sprites/BackgroundSprites/faceoff_circle.bmp"
+dest_files=["res://.godot/imported/faceoff_circle.bmp-afe018481bff766e5ac5c4652bdde6c0.ctex"]
 
 [params]
 

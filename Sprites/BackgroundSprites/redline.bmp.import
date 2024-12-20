@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0m2xyv6tm3gt"
-path="res://.godot/imported/goaliecrease.bmp-37e8260d07c82d87d683ef762faf1dc1.ctex"
+uid="uid://1jaeplvdxpur"
+path="res://.godot/imported/redline.bmp-d512d7da6e084da083a4be2814457559.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/goaliecrease.bmp"
-dest_files=["res://.godot/imported/goaliecrease.bmp-37e8260d07c82d87d683ef762faf1dc1.ctex"]
+source_file="res://Sprites/BackgroundSprites/redline.bmp"
+dest_files=["res://.godot/imported/redline.bmp-d512d7da6e084da083a4be2814457559.ctex"]
 
 [params]
 

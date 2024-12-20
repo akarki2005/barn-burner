@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddpcgutwo3qr6"
-path="res://.godot/imported/pusher_blue.bmp-71db406da340171eba331b8baff8ba6b.ctex"
+uid="uid://dpg14w8sg48xm"
+path="res://.godot/imported/pushers_away.bmp-822fd5fd3a1b6967a232e9733864089e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pusher_blue.bmp"
-dest_files=["res://.godot/imported/pusher_blue.bmp-71db406da340171eba331b8baff8ba6b.ctex"]
+source_file="res://Sprites/teamSprites/pushers_away.bmp"
+dest_files=["res://.godot/imported/pushers_away.bmp-822fd5fd3a1b6967a232e9733864089e.ctex"]
 
 [params]
 

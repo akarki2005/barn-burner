@@ -62,6 +62,7 @@ func boost_display_helper():
 	else:
 		$UserInterface/P1BoostMeter.texture = boost_meter_sprites[0]
 	$UserInterface/P1BoostMeter.frame = ceil(boost_meter_frames * ($Player1.curr_boost / $Player1.max_boost))
+	$UserInterface/P1BoostMeter/P1BoostLabel.text = str(ceil($Player1.curr_boost))
 	
 	# Player 2
 	if $Player2.prev_boosting:
@@ -71,6 +72,7 @@ func boost_display_helper():
 	else:
 		$UserInterface/P2BoostMeter.texture = boost_meter_sprites[0]
 	$UserInterface/P2BoostMeter.frame = ceil(boost_meter_frames * ($Player2.curr_boost / $Player2.max_boost))
+	$UserInterface/P2BoostMeter/P2BoostLabel.text = str(ceil($Player2.curr_boost))
 
 
 func _on_goal_scored(scorer):
@@ -123,3 +125,4 @@ func _on_game_clock_timeout():
 		await get_tree().create_timer(3.0, false).timeout
 		gamealertlabel._alert('faceoff')
 		gamealert._alert('faceoff')
+		$UserInterface/TimeDisplay.text = 'OT'

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxxeild4tycr2"
-path="res://.godot/imported/scoreboard.bmp-a196dac7bce8a2dfd399c27c9c7d12df.ctex"
+uid="uid://ctnglpy0gidg1"
+path="res://.godot/imported/centerice.bmp-34b822c173cb57df3386bfdc2d1b0f29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/scoreboard.bmp"
-dest_files=["res://.godot/imported/scoreboard.bmp-a196dac7bce8a2dfd399c27c9c7d12df.ctex"]
+source_file="res://Sprites/BackgroundSprites/centerice.bmp"
+dest_files=["res://.godot/imported/centerice.bmp-34b822c173cb57df3386bfdc2d1b0f29.ctex"]
 
 [params]
 

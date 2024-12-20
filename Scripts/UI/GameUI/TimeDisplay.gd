@@ -1,12 +1,11 @@
 extends Label
 
-var counter = 0
-var overtime = 1
+var counter = 1
+var overtime = 0
 var end_of_regulation = false
 var gameover = false
 
 func _physics_process(delta):
-	counter += 1
 	var time = ceil($GameClock.time_left)
 	if time > 0:
 		var mins = int(time) / 60
@@ -15,15 +14,17 @@ func _physics_process(delta):
 			text = "%s:0%s" % [mins, secs]
 		else:
 			text = "%s:%s" % [mins, secs]
-	elif end_of_regulation and counter % 60 == 0 and not gameover:
+	elif end_of_regulation and not gameover:
 		var otmins = overtime / 60
 		var otsecs = overtime % 60
 		if otsecs < 10:
 			text = "+%s:0%s" % [otmins, otsecs]
 		else:
 			text = "+%s:%s" % [otmins, otsecs]
-		overtime += 1
-		counter = 0
+		if counter % 60 == 0:
+			overtime += 1
+			counter = 0
+		counter += 1
 
 
 func _on_game_clock_timeout():
@@ -31,7 +32,6 @@ func _on_game_clock_timeout():
 	end_of_regulation = true
 	if GameVariables.p1_score != GameVariables.p2_score:
 		gameover = true
-	counter = 0
 
 
 func _on_goal_scored():

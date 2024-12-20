@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpciv185dras"
-path="res://.godot/imported/game_alert.bmp-043dbdfca7760841445800dfafddc50e.ctex"
+uid="uid://h3vqityierru"
+path="res://.godot/imported/boards.bmp-26390f753691e6560e6afef0c1a069aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/game_alert.bmp"
-dest_files=["res://.godot/imported/game_alert.bmp-043dbdfca7760841445800dfafddc50e.ctex"]
+source_file="res://Sprites/BackgroundSprites/boards.bmp"
+dest_files=["res://.godot/imported/boards.bmp-26390f753691e6560e6afef0c1a069aa.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bphtgfs5ui7b8"
-path="res://.godot/imported/faceoff_circle.bmp-4a11e5b1b6c38258b14461718a8b6bfc.ctex"
+uid="uid://c1ppumxd0orle"
+path="res://.godot/imported/goaliecrease.bmp-6eaeef0ed0d34a9445ef360824326cbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/faceoff_circle.bmp"
-dest_files=["res://.godot/imported/faceoff_circle.bmp-4a11e5b1b6c38258b14461718a8b6bfc.ctex"]
+source_file="res://Sprites/BackgroundSprites/goaliecrease.bmp"
+dest_files=["res://.godot/imported/goaliecrease.bmp-6eaeef0ed0d34a9445ef360824326cbc.ctex"]
 
 [params]
 
