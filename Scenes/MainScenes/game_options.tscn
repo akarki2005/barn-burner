@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqfucrj8g67w7"]
+
+[ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="1_ovqpg"]
+[ext_resource type="Texture2D" uid="uid://w20j4l63ca71" path="res://Sprites/UISprites/uipanel_ninepatchrect.bmp" id="2_a5bnc"]
+[ext_resource type="Script" path="res://Scripts/UI/PreGameUI/SeriesLengthButton.gd" id="3_i5a0s"]
+
+[sub_resource type="Theme" id="Theme_jeitw"]
+default_font = ExtResource("1_ovqpg")
+default_font_size = 0
+
+[node name="GameOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jeitw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 118.0
+texture = ExtResource("2_a5bnc")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 114.0
+offset_bottom = 110.0
+
+[node name="Header" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "-- Game Options --"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameMode" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Game Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameModeButton" type="OptionButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+item_count = 1
+selected = 0
+popup/item_0/text = "Classic"
+popup/item_0/id = 0
+
+[node name="SeriesLength" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Series Length"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SeriesLengthButton" type="OptionButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Single Game"
+popup/item_0/id = 0
+popup/item_1/text = "Best of 3"
+popup/item_1/id = 1
+popup/item_2/text = "Best of 5"
+popup/item_2/id = 2
+popup/item_3/text = "Best of 7"
+popup/item_3/id = 3
+script = ExtResource("3_i5a0s")
+
+[connection signal="item_selected" from="NinePatchRect/VBoxContainer/SeriesLengthButton" to="NinePatchRect/VBoxContainer/SeriesLengthButton" method="_on_item_selected"]

@@ -20,8 +20,15 @@ const boost_meter_sprites = [
 func game_over():
 	GameVariables.gameover = true
 	if ot:
-		await get_tree().create_timer(4.0, false).timeout
+		await get_tree().create_timer(3.0, false).timeout
+		SeriesInfoDisplay.update_wins()
+		$UserInterface/SeriesInfoLabel.update()
+		SeriesInfoDisplay.update_curr_game()
+		await get_tree().create_timer(1.0, false).timeout
 	else:
+		SeriesInfoDisplay.update_wins()
+		$UserInterface/SeriesInfoLabel.update()
+		SeriesInfoDisplay.update_curr_game()
 		await get_tree().create_timer(1.0, false).timeout
 	pause_menu.queue_free()
 	end_game_menu.visible = true
@@ -90,6 +97,10 @@ func _on_goal_scored(scorer):
 		gamealertlabel._alert('faceoff')
 		gamealert._alert('faceoff')
 	else:
+		if scorer == 'p1':
+			p1score += 1
+		else:
+			p2score += 1
 		gamealertlabel._alert('gameover_ot')
 		gamealert._alert('gameover_ot')
 		game_over()

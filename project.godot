@@ -19,6 +19,8 @@ config/icon="res://Sprites/icon.svg"
 
 GameVariables="*res://Scripts/Global/game_variables.gd"
 FullscreenController="*res://Scripts/Global/fullscreen_controller.gd"
+SeriesVariables="*res://Scripts/Global/series_variables.gd"
+SeriesInfoDisplay="*res://Scripts/Algorithms/series_info_display_algo.gd"
 
 [display]
 

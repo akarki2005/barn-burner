@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bi0qkiv7i6wn7"]
+[gd_scene load_steps=37 format=3 uid="uid://bi0qkiv7i6wn7"]
 
 [ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_oddul"]
 [ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/GameAlertLabel.gd" id="26_dggg2"]
 [ext_resource type="Texture2D" uid="uid://tswxnfqriv4g" path="res://Sprites/playerInfoSprites/boost_bar_regen.bmp" id="27_3c1yj"]
 [ext_resource type="Script" path="res://Scripts/UI/end_game_menu.gd" id="29_y0hqd"]
+[ext_resource type="Script" path="res://Scripts/UI/GameUI/SeriesInfoLabel.gd" id="31_sxgga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hg4b"]
 
@@ -206,7 +207,7 @@ vertical_alignment = 1
 script = ExtResource("17_gun7a")
 
 [node name="GameClock" type="Timer" parent="UserInterface/TimeDisplay"]
-wait_time = 90.0
+wait_time = 5.0
 one_shot = true
 script = ExtResource("18_jwlo5")
 
@@ -357,6 +358,17 @@ text = "120
 "
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="SeriesInfoLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 593.0
+offset_right = 862.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("31_sxgga")
 
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="." method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player1" method="_on_goal_detector_left_body_entered"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj3dujhmt1vpa"]
+
+[ext_resource type="PackedScene" uid="uid://bjmw12u4pn1rr" path="res://Scenes/ice.tscn" id="1_7rncj"]
+[ext_resource type="PackedScene" uid="uid://cqfucrj8g67w7" path="res://Scenes/MainScenes/game_options.tscn" id="2_yp157"]
+
+[node name="game_options_select_screen" type="Node2D"]
+
+[node name="Ice Surface" parent="." instance=ExtResource("1_7rncj")]
+position = Vector2(576, 324)
+scale = Vector2(72, 40.5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOptions" parent="Control" instance=ExtResource("2_yp157")]
+layout_mode = 1
+offset_left = 327.0
+offset_top = 90.0
+offset_right = 327.0
+offset_bottom = 90.0
+scale = Vector2(4, 4)

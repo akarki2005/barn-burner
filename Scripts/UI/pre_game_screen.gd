@@ -78,6 +78,11 @@ func cycle_team(player : int, direction : String):
 			p2_curr_team += 1
 			p2_preview.frame = p2_curr_team % GameVariables.num_teams
 			p2_team.text = GameVariables.teamCitiesAndAbbreviations[p2_curr_team % GameVariables.num_teams][0]
+	# make sure team numbers are in range of 0, 31
+	if p1_curr_team > 31:
+		p1_curr_team = p1_curr_team % GameVariables.num_teams
+	if p2_curr_team > 31:
+		p2_curr_team = p2_curr_team % GameVariables.num_teams
 
 
 func _on_back_button_pressed():
