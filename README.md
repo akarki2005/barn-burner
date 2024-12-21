@@ -22,10 +22,11 @@ This is the github repository for Barn Burner, a 2D retro air hockey game develo
 ### Series Length
 
 * Exhibition: A single elimination game - winner takes all!
-* Best of 3/5/7 Series (coming soon): Compete in a multi-game playoff series with the same teams, with alternating home/away splits
+* Best of 3/5/7 Series: Compete in a multi-game playoff series with the same teams, with alternating home/away splits
 
 ## Releases
 
+* [alpha v1.2](Docs/alpha_v1.2.md)
 * [alpha v1.1](Docs/alpha_v1.1.md)
 * [alpha v1.0](Docs/alpha_v1.0.md)
 

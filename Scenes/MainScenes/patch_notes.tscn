@@ -9,7 +9,7 @@
 script = ExtResource("1_8i42g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(577, 315)
 scale = Vector2(72, 40.5)
 texture = ExtResource("2_yblp5")
 
@@ -44,21 +44,28 @@ flip_h = true
 
 [node name="newFeatures" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 1052.0
-offset_bottom = 350.0
+offset_left = 98.0
+offset_top = 171.0
+offset_right = 1050.0
+offset_bottom = 436.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
+text = "- Reduced puck and player size by 22% and 10% respectively
+- Revamped game screen
+- Best of 3/5/7 series
+    - In the pre game screen, you can now select between a single 
+      elimination game or a best of 3/5/7 series
+    - If a series is chosen, the bottom bar of the game screen will
+      display the current status of the series"
 vertical_alignment = 1
 
 [node name="newFeaturesHeader" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 100.0
-offset_top = 75.0
+offset_top = 82.0
 offset_right = 1052.0
-offset_bottom = 175.0
+offset_bottom = 182.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 50
@@ -68,10 +75,10 @@ vertical_alignment = 1
 
 [node name="bugFixesHeader" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 325.0
-offset_right = 1052.0
-offset_bottom = 425.0
+offset_left = 101.0
+offset_top = 422.0
+offset_right = 1053.0
+offset_bottom = 522.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 50
@@ -81,13 +88,15 @@ vertical_alignment = 1
 
 [node name="bugFixes" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 400.0
-offset_right = 1052.0
-offset_bottom = 600.0
+offset_left = 95.0
+offset_top = 518.0
+offset_right = 1047.0
+offset_bottom = 609.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
+text = "- General UI and quality of life improvements
+- General code refactoring"
 vertical_alignment = 1
 
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]
