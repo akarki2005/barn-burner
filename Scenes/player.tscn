@@ -8,7 +8,7 @@
 load_path = "res://.godot/imported/pushers_home.bmp-57f8060eac527377c00cde90d6f0464f.ctex"
 
 [node name="player" type="CharacterBody2D"]
-scale = Vector2(4, 4)
+scale = Vector2(3.6, 3.6)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_wq40r")
