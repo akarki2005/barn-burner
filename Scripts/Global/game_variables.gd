@@ -14,6 +14,8 @@ const num_teams = 32
 
 var gameover = false
 
+var home_team: int = 2
+
 const teamCitiesAndAbbreviations = [
 	['ANAHEIM', 'ANA'],
 	['BOSTON', 'BOS'],

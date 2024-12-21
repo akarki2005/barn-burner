@@ -38,11 +38,20 @@ func _ready():
 	curr_boost = max_boost
 	# set sprite of players
 	if self.move_left == 'leftp1':
-		teamSprite.texture = load("res://Sprites/teamSprites/pushers_away.bmp")
-		teamSprite.frame = GameVariables.p1_team_number % teams
+		if GameVariables.home_team == 2:
+			teamSprite.texture = load("res://Sprites/teamSprites/pushers_away.bmp")
+			teamSprite.frame = GameVariables.p1_team_number % teams
+		else:
+			teamSprite.texture = load("res://Sprites/teamSprites/pushers_home.bmp")
+			teamSprite.frame = GameVariables.p1_team_number % teams
 	else:
-		teamSprite.texture = load("res://Sprites/teamSprites/pushers_home.bmp")
-		teamSprite.frame = GameVariables.p2_team_number % teams
+		if GameVariables.home_team == 2:
+			teamSprite.texture = load("res://Sprites/teamSprites/pushers_home.bmp")
+			teamSprite.frame = GameVariables.p2_team_number % teams
+		else:
+			teamSprite.texture = load("res://Sprites/teamSprites/pushers_away.bmp")
+			teamSprite.frame = GameVariables.p2_team_number % teams
+	
 	await get_tree().create_timer(3.0, false).timeout
 	frozen = false
 

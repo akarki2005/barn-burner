@@ -22,11 +22,13 @@ func game_over():
 	if ot:
 		await get_tree().create_timer(3.0, false).timeout
 		SeriesInfoDisplay.update_wins()
+		$UserInterface/EndGameMenu/Panel/VBoxContainer/RematchButton.check_win_cond()
 		$UserInterface/SeriesInfoLabel.update()
 		SeriesInfoDisplay.update_curr_game()
 		await get_tree().create_timer(1.0, false).timeout
 	else:
 		SeriesInfoDisplay.update_wins()
+		$UserInterface/EndGameMenu/Panel/VBoxContainer/RematchButton.check_win_cond()
 		$UserInterface/SeriesInfoLabel.update()
 		SeriesInfoDisplay.update_curr_game()
 		await get_tree().create_timer(1.0, false).timeout
@@ -39,6 +41,7 @@ func _ready():
 	GameVariables.p1_score = 0
 	GameVariables.p2_score = 0
 	GameVariables.gameover = false
+	
 	var gamealertlabel = $UserInterface/GameAlertLabel
 	var gamealert = $UserInterface/GameAlert
 	gamealertlabel._alert('faceoff')

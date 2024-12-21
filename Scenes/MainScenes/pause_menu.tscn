@@ -59,3 +59,5 @@ text = "RESUME"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "QUIT"
+
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
