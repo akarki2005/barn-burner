@@ -1,7 +1,8 @@
 extends OptionButton
 
 func _ready():
-	selected = SeriesVariables.series_length / 2
+	SeriesVariables.series_length = 1
+	selected = 0
 
 
 func _on_item_selected(index):
