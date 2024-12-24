@@ -26,6 +26,8 @@ This is the github repository for Barn Burner, a 2D retro air hockey game develo
 
 ## Releases
 
+* [alpha v1.2.1 (windows only)](Builds/BarnBurner_alpha1.2.1.exe)
+	* [Patch Notes](Docs/alpha_v1.2.1.md)
 * [alpha v1.2 (windows only)](Builds/BarnBurner_alpha1.2.exe)
 	* [Patch Notes](Docs/alpha_v1.2.md)
 * [alpha v1.1 (windows only)](Builds/BarnBurner_alpha1.1.exe)
