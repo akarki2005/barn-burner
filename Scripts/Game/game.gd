@@ -56,6 +56,8 @@ func _ready():
 	# initialize boost meters
 	var p1_boost_meter = $UserInterface/P1BoostMeter
 	var p2_boost_meter = $UserInterface/P2BoostMeter
+	
+	GameFunctions.set_home_team()
 
 
 func _physics_process(delta):
