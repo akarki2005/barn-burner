@@ -207,7 +207,7 @@ vertical_alignment = 1
 script = ExtResource("17_gun7a")
 
 [node name="GameClock" type="Timer" parent="UserInterface/TimeDisplay"]
-wait_time = 90.0
+wait_time = 5.0
 one_shot = true
 script = ExtResource("18_jwlo5")
 
