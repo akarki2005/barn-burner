@@ -139,7 +139,7 @@ shape = SubResource("RectangleShape2D_prnau")
 position = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorLeft"]
-position = Vector2(-645, 35)
+position = Vector2(-628, 35)
 scale = Vector2(1, 29)
 shape = SubResource("RectangleShape2D_bowmq")
 
@@ -147,7 +147,7 @@ shape = SubResource("RectangleShape2D_bowmq")
 position = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorRight"]
-position = Vector2(645, 35)
+position = Vector2(628, 35)
 scale = Vector2(1, 29)
 shape = SubResource("RectangleShape2D_elutc")
 
