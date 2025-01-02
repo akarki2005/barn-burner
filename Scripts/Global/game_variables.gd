@@ -12,14 +12,19 @@ const ad_numbers = [0, 1, 2, 3, 4, 5, 6, 7]
 var p1_ad_numbers = []
 var p2_ad_numbers = []
 
-const p1initial_pos = Vector2(300, 324)
-const p2initial_pos = Vector2(852, 324)
+const p1initial_pos = Vector2(335, 324)
+const p2initial_pos = Vector2(817, 324)
+
+const g1initial_pos = Vector2(55.5, 324)
+const g2initial_pos = Vector2(1096.5, 324)
 
 const num_teams = 32
 
 var gameover = false
 
 var home_team: int = 2
+
+var game_mode_is_chaos: bool = false
 
 const teamCitiesAndAbbreviations = [
 	['ANAHEIM', 'ANA'],

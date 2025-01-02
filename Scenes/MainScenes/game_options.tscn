@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqfucrj8g67w7"]
+[gd_scene load_steps=6 format=3 uid="uid://cqfucrj8g67w7"]
 
 [ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="1_ovqpg"]
 [ext_resource type="Texture2D" uid="uid://w20j4l63ca71" path="res://Sprites/UISprites/uipanel_ninepatchrect.bmp" id="2_a5bnc"]
 [ext_resource type="Script" path="res://Scripts/UI/PreGameUI/SeriesLengthButton.gd" id="3_i5a0s"]
+[ext_resource type="Script" path="res://Scripts/UI/GameModeButton.gd" id="3_yeecj"]
 
 [sub_resource type="Theme" id="Theme_jeitw"]
 default_font = ExtResource("1_ovqpg")
@@ -48,10 +49,13 @@ vertical_alignment = 1
 
 [node name="GameModeButton" type="OptionButton" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
-item_count = 1
+item_count = 2
 selected = 0
 popup/item_0/text = "Classic"
 popup/item_0/id = 0
+popup/item_1/text = "Chaos"
+popup/item_1/id = 1
+script = ExtResource("3_yeecj")
 
 [node name="SeriesLength" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -73,4 +77,5 @@ popup/item_3/text = "Best of 7"
 popup/item_3/id = 3
 script = ExtResource("3_i5a0s")
 
+[connection signal="item_selected" from="NinePatchRect/VBoxContainer/GameModeButton" to="NinePatchRect/VBoxContainer/GameModeButton" method="_on_item_selected"]
 [connection signal="item_selected" from="NinePatchRect/VBoxContainer/SeriesLengthButton" to="NinePatchRect/VBoxContainer/SeriesLengthButton" method="_on_item_selected"]

@@ -56,6 +56,13 @@ func _ready():
 	# initialize boost meters
 	var p1_boost_meter = $UserInterface/P1BoostMeter
 	var p2_boost_meter = $UserInterface/P2BoostMeter
+	
+	$Goalie1.goalie = true
+	$Goalie2.goalie = true
+	
+	if not GameVariables.game_mode_is_chaos:
+		$Goalie1.queue_free()
+		$Goalie2.queue_free()
 
 
 func _physics_process(delta):
@@ -127,6 +134,13 @@ func _on_game_clock_timeout():
 	var gamealert = $UserInterface/GameAlert
 	player1._end_of_regulation()
 	player2._end_of_regulation()
+	
+	if GameVariables.game_mode_is_chaos:
+		var goalie1 = $Goalie1
+		var goalie2 = $Goalie2
+		goalie1._end_of_regulation()
+		goalie2._end_of_regulation()
+	
 	puck._end_of_regulation()
 	if p1score != p2score:
 		gamealert._alert('gameover_reg')

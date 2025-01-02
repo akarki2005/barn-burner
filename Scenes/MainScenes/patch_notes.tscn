@@ -28,7 +28,7 @@ offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 75
-text = "alpha v1.2 patch notes"
+text = "alpha v1.3 patch notes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -51,13 +51,6 @@ offset_bottom = 436.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
-text = "- Reduced puck and player size by 22% and 10% respectively
-- Revamped game screen
-- Best of 3/5/7 series
-    - In the pre game screen, you can now select between a single 
-      elimination game or a best of 3/5/7 series
-    - If a series is chosen, the bottom bar of the game screen will
-      display the current status of the series"
 vertical_alignment = 1
 
 [node name="newFeaturesHeader" type="Label" parent="Control"]
@@ -95,8 +88,6 @@ offset_bottom = 609.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
-text = "- General UI and quality of life improvements
-- General code refactoring"
 vertical_alignment = 1
 
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

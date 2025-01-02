@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bi0qkiv7i6wn7"]
+[gd_scene load_steps=43 format=3 uid="uid://bi0qkiv7i6wn7"]
 
 [ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_oddul"]
 [ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
@@ -10,9 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://1jaeplvdxpur" path="res://Sprites/BackgroundSprites/redline.bmp" id="5_qha0b"]
 [ext_resource type="Texture2D" uid="uid://ctnglpy0gidg1" path="res://Sprites/BackgroundSprites/centerice.bmp" id="6_r5ybu"]
 [ext_resource type="Script" path="res://Scripts/Game/CenterIceLogo.gd" id="7_cttf6"]
-[ext_resource type="Texture2D" uid="uid://c1ppumxd0orle" path="res://Sprites/BackgroundSprites/goaliecrease.bmp" id="8_o42ed"]
 [ext_resource type="Texture2D" uid="uid://cknt5dnw6y6cy" path="res://Sprites/ads/amazon_parody_logo.bmp" id="9_51tao"]
-[ext_resource type="Script" path="res://Scenes/MainScenes/Ads.gd" id="9_mk4mj"]
+[ext_resource type="Script" path="res://Scripts/Game/Ads.gd" id="9_xtvr2"]
 [ext_resource type="PackedScene" uid="uid://bp6dj0wuu813j" path="res://Scenes/goal_light.tscn" id="10_8tngk"]
 [ext_resource type="Texture2D" uid="uid://sxcwn25x5be0" path="res://Sprites/ads/dominos_parody_logo.bmp" id="10_67dh6"]
 [ext_resource type="Texture2D" uid="uid://6p1ii2i146xt" path="res://Sprites/ads/twitch_parody_logo.bmp" id="11_g2mv4"]
@@ -20,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="12_vgiad"]
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/UserInterface.gd" id="13_p207g"]
 [ext_resource type="Texture2D" uid="uid://dxxeild4tycr2" path="res://Sprites/UISprites/scoreboard.bmp" id="14_1ibud"]
+[ext_resource type="Script" path="res://Scripts/Game/Boards.gd" id="14_71j3j"]
 [ext_resource type="Script" path="res://Scripts/Game/goal_light.gd" id="16_bu6nx"]
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/TimeDisplay.gd" id="17_gun7a"]
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/GameClock.gd" id="18_jwlo5"]
@@ -36,6 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://tswxnfqriv4g" path="res://Sprites/playerInfoSprites/boost_bar_regen.bmp" id="27_3c1yj"]
 [ext_resource type="Script" path="res://Scripts/UI/end_game_menu.gd" id="29_y0hqd"]
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/SeriesInfoLabel.gd" id="31_sxgga"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4vjo"]
+load_path = "res://.godot/imported/goaliecrease-Sheet.bmp-8cac830e1391282a5390831005de99e1.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hg4b"]
 
@@ -84,16 +87,18 @@ script = ExtResource("7_cttf6")
 position = Vector2(467, 0)
 rotation = 4.71239
 scale = Vector2(10, 10)
-texture = ExtResource("8_o42ed")
+texture = SubResource("CompressedTexture2D_s4vjo")
+hframes = 2
 
 [node name="CreaseLeft" type="Sprite2D" parent="Background/Ice"]
 position = Vector2(-467, 0)
 rotation = 1.5708
 scale = Vector2(10, 10)
-texture = ExtResource("8_o42ed")
+texture = SubResource("CompressedTexture2D_s4vjo")
+hframes = 2
 
 [node name="Ads" type="Node2D" parent="Background/Ice"]
-script = ExtResource("9_mk4mj")
+script = ExtResource("9_xtvr2")
 
 [node name="TopLeft" type="Sprite2D" parent="Background/Ice/Ads"]
 position = Vector2(-240, -140)
@@ -116,6 +121,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("12_hbtm5")
 
 [node name="Boards" type="Node2D" parent="Background"]
+script = ExtResource("14_71j3j")
 
 [node name="Bottom" parent="Background/Boards" instance=ExtResource("5_05yok")]
 position = Vector2(0, 250)
@@ -142,8 +148,8 @@ position = Vector2(569, 175)
 scale = Vector2(0.7, 7)
 
 [node name="PlayerBlockerLeft" type="StaticBody2D" parent="Background/Boards"]
-position = Vector2(-569, 35)
-scale = Vector2(0.75, 11.2)
+position = Vector2(-569, 75)
+scale = Vector2(0.75, 25)
 collision_layer = 2
 collision_mask = 2
 
@@ -152,19 +158,20 @@ position = Vector2(0, -3)
 scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_7hg4b")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Background/Boards"]
-position = Vector2(569, 35)
-scale = Vector2(0.75, 11.2)
+[node name="PlayerBlockerRight" type="StaticBody2D" parent="Background/Boards"]
+position = Vector2(569, 75)
+scale = Vector2(0.75, 25)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boards/PlayerBlockerRight"]
 position = Vector2(0, -3)
 scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_prnau")
 
 [node name="GoalDetectorLeft" type="Area2D" parent="Background"]
 position = Vector2(0, -30)
+scale = Vector2(1, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorLeft"]
 position = Vector2(-628, 35)
@@ -173,6 +180,7 @@ shape = SubResource("RectangleShape2D_bowmq")
 
 [node name="GoalDetectorRight" type="Area2D" parent="Background"]
 position = Vector2(0, -30)
+scale = Vector2(1, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/GoalDetectorRight"]
 position = Vector2(628, 35)
@@ -180,7 +188,7 @@ scale = Vector2(1, 29)
 shape = SubResource("RectangleShape2D_elutc")
 
 [node name="Player1" parent="." instance=ExtResource("2_d2tic")]
-position = Vector2(300, 324)
+position = Vector2(335, 324)
 move_left = "leftp1"
 move_right = "rightp1"
 move_up = "upp1"
@@ -188,9 +196,21 @@ move_down = "downp1"
 boost = "boostp1"
 
 [node name="Player2" parent="." instance=ExtResource("2_d2tic")]
-position = Vector2(852, 324)
+position = Vector2(817, 324)
 move_left = "leftp2"
 move_right = "rightp2"
+move_up = "upp2"
+move_down = "downp2"
+boost = "boostp2"
+
+[node name="Goalie1" parent="." instance=ExtResource("2_d2tic")]
+position = Vector2(55.5, 324)
+move_up = "upp1"
+move_down = "downp1"
+boost = "boostp1"
+
+[node name="Goalie2" parent="." instance=ExtResource("2_d2tic")]
+position = Vector2(1096.5, 324)
 move_up = "upp2"
 move_down = "downp2"
 boost = "boostp2"
@@ -403,10 +423,14 @@ script = ExtResource("31_sxgga")
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Player2" method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="Puck" method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorLeft" to="UserInterface" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="Goalie1" method="_on_goal_detector_left_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorLeft" to="Goalie2" method="_on_goal_detector_left_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorRight" to="." method="_on_goal_detector_right_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorRight" to="Player1" method="_on_goal_detector_right_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorRight" to="Player2" method="_on_goal_detector_right_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorRight" to="Puck" method="_on_goal_detector_right_body_entered"]
 [connection signal="body_entered" from="Background/GoalDetectorRight" to="UserInterface" method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="Goalie1" method="_on_goal_detector_right_body_entered"]
+[connection signal="body_entered" from="Background/GoalDetectorRight" to="Goalie2" method="_on_goal_detector_right_body_entered"]
 [connection signal="timeout" from="UserInterface/TimeDisplay/GameClock" to="." method="_on_game_clock_timeout"]
 [connection signal="timeout" from="UserInterface/TimeDisplay/GameClock" to="UserInterface/TimeDisplay" method="_on_game_clock_timeout"]

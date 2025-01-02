@@ -17,6 +17,9 @@ var impulse = 400
 var p1holding_pos = Vector2(100, -300)
 var p2holding_pos = Vector2(200, -300)
 
+var g1holding_pos = Vector2(100, -500)
+var g2holding_pos = Vector2(200, -500)
+
 var p1score = 0
 var p2score = 0
 
@@ -34,10 +37,13 @@ var prev_boosting = false
 
 var boost_meter_frames = 64
 
+var goalie: bool = false
+
 func _ready():
+	
 	curr_boost = max_boost
 	# set sprite of players
-	if self.move_left == 'leftp1':
+	if self.move_up == 'upp1':
 		if GameVariables.home_team == 2:
 			teamSprite.texture = load("res://Sprites/teamSprites/pushers_away.bmp")
 			teamSprite.frame = GameVariables.p1_team_number % teams
@@ -122,16 +128,28 @@ func reset():
 
 	curr_boost = max_boost
 	
-	if move_left == 'leftp1':
-		position = p1holding_pos
-		velocity = Vector2.ZERO
-		await get_tree().create_timer(0.01, false).timeout
-		position = GameVariables.p1initial_pos
+	if move_up == 'upp1':
+		if not goalie:
+			position = p1holding_pos
+			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = GameVariables.p1initial_pos
+		else:
+			position = g1holding_pos
+			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = GameVariables.g1initial_pos
 	else:
-		position = p2holding_pos
-		velocity = Vector2.ZERO
-		await get_tree().create_timer(0.01, false).timeout
-		position = GameVariables.p2initial_pos
+		if not goalie:
+			position = p2holding_pos
+			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = GameVariables.p2initial_pos
+		else:
+			position = g2holding_pos
+			velocity = Vector2.ZERO
+			await get_tree().create_timer(0.01, false).timeout
+			position = GameVariables.g2initial_pos
 
 
 func _end_of_regulation():
