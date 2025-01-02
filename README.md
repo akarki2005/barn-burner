@@ -6,6 +6,7 @@ This is the github repository for Barn Burner, a 2D retro air hockey game develo
 
 * [About](#about)
 * [Releases](#releases)
+* [Future Updates](#future updates)
 * [Feedback](#feedback)
 
 ## About
@@ -34,6 +35,16 @@ This is the github repository for Barn Burner, a 2D retro air hockey game develo
 	* [Patch Notes](Docs/alpha_v1.1.md)
 * [alpha v1.0 (windows only)](Builds/BarnBurner_alpha1.0.exe)
 	* [Patch Notes](Docs/alpha_v1.0.md)
+
+## Future Updates
+
+Currently, I'm hard at work on alpha v1.3, which is shaping up to be a fairly substantial release. In this update, I'm planning to include...
+
+* Chaos (new game mode): larger nets, and each player gets a goalie and attacking player to control.
+* On-ice advertisements: if you're not tired of ads being shoved down your throat in real life, now you can have them be shoved down your throat in a game too! Don't worry, they're not real ads, just parodies of existing companies.
+* UI upgrades: a less ugly user interface!
+
+At the moment, I think I'll be able to get alpha v1.3 released sometime in mid-January, but it might be pushed to the end of the month.
 
 ## Feedback
 
