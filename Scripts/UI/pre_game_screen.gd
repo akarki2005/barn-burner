@@ -51,6 +51,8 @@ func _on_play_button_pressed():
 	GameVariables.p1_team_number = p1_curr_team
 	GameVariables.p2_team_number = p2_curr_team
 	get_tree().change_scene_to_file("res://Scenes/MainScenes/game.tscn")
+	
+	GameFunctions.set_ads()
 
 
 func cycle_team(player : int, direction : String):

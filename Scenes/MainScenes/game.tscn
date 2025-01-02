@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bi0qkiv7i6wn7"]
+[gd_scene load_steps=42 format=3 uid="uid://bi0qkiv7i6wn7"]
 
 [ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_oddul"]
 [ext_resource type="PackedScene" uid="uid://dgw1v4cts10ue" path="res://Scenes/player.tscn" id="2_d2tic"]
@@ -11,7 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://ctnglpy0gidg1" path="res://Sprites/BackgroundSprites/centerice.bmp" id="6_r5ybu"]
 [ext_resource type="Script" path="res://Scripts/Game/CenterIceLogo.gd" id="7_cttf6"]
 [ext_resource type="Texture2D" uid="uid://c1ppumxd0orle" path="res://Sprites/BackgroundSprites/goaliecrease.bmp" id="8_o42ed"]
+[ext_resource type="Texture2D" uid="uid://cknt5dnw6y6cy" path="res://Sprites/ads/amazon_parody_logo.bmp" id="9_51tao"]
+[ext_resource type="Script" path="res://Scenes/MainScenes/Ads.gd" id="9_mk4mj"]
 [ext_resource type="PackedScene" uid="uid://bp6dj0wuu813j" path="res://Scenes/goal_light.tscn" id="10_8tngk"]
+[ext_resource type="Texture2D" uid="uid://sxcwn25x5be0" path="res://Sprites/ads/dominos_parody_logo.bmp" id="10_67dh6"]
+[ext_resource type="Texture2D" uid="uid://6p1ii2i146xt" path="res://Sprites/ads/twitch_parody_logo.bmp" id="11_g2mv4"]
+[ext_resource type="Texture2D" uid="uid://djvmgwerojhx3" path="res://Sprites/ads/xbox_parody_logo.bmp" id="12_hbtm5"]
 [ext_resource type="FontFile" uid="uid://dnrd8fh6dkda8" path="res://Resources/m5x7.ttf" id="12_vgiad"]
 [ext_resource type="Script" path="res://Scripts/UI/GameUI/UserInterface.gd" id="13_p207g"]
 [ext_resource type="Texture2D" uid="uid://dxxeild4tycr2" path="res://Sprites/UISprites/scoreboard.bmp" id="14_1ibud"]
@@ -86,6 +91,29 @@ position = Vector2(-467, 0)
 rotation = 1.5708
 scale = Vector2(10, 10)
 texture = ExtResource("8_o42ed")
+
+[node name="Ads" type="Node2D" parent="Background/Ice"]
+script = ExtResource("9_mk4mj")
+
+[node name="TopLeft" type="Sprite2D" parent="Background/Ice/Ads"]
+position = Vector2(-240, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("9_51tao")
+
+[node name="TopRight" type="Sprite2D" parent="Background/Ice/Ads"]
+position = Vector2(240, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("10_67dh6")
+
+[node name="BottomLeft" type="Sprite2D" parent="Background/Ice/Ads"]
+position = Vector2(-240, 140)
+scale = Vector2(5, 5)
+texture = ExtResource("11_g2mv4")
+
+[node name="BottomRight" type="Sprite2D" parent="Background/Ice/Ads"]
+position = Vector2(240, 140)
+scale = Vector2(5, 5)
+texture = ExtResource("12_hbtm5")
 
 [node name="Boards" type="Node2D" parent="Background"]
 

@@ -7,6 +7,11 @@ var p2_team_number: int = 0
 var p1_score: int = 0
 var p2_score: int = 0
 
+const ad_numbers = [0, 1, 2, 3, 4, 5, 6, 7]
+
+var p1_ad_numbers = []
+var p2_ad_numbers = []
+
 const p1initial_pos = Vector2(300, 324)
 const p2initial_pos = Vector2(852, 324)
 
@@ -39,7 +44,7 @@ const teamCitiesAndAbbreviations = [
 	['OTTAWA', 'OTT'],
 	['PHILADELPHIA', 'PHI'],
 	['PITTSBURGH', 'PIT'],
-	['SAINT LOUIS', 'STL'],
+	['ST LOUIS', 'STL'],
 	['SAN JOSE', 'SJS'],
 	['SEATTLE', 'SEA'],
 	['TAMPA BAY', 'TBL'],
@@ -49,4 +54,15 @@ const teamCitiesAndAbbreviations = [
 	['VEGAS', 'VGK'],
 	['WINNIPEG', 'WPG'],
 	['WASHINGTON', 'WSH']
+]
+
+var ads = [
+	load("res://Sprites/ads/amazon_parody_logo.bmp"), 
+	load("res://Sprites/ads/burgerking_parody_logo.bmp"), 
+	load("res://Sprites/ads/dominos_parody_logo.bmp"), 
+	load("res://Sprites/ads/linkedin_parody_logo.bmp"),
+	load("res://Sprites/ads/tesla_parody_logo.bmp"),
+	load("res://Sprites/ads/twitch_parody_logo.bmp"),
+	load("res://Sprites/ads/xbox_parody_logo.bmp"),
+	load("res://Sprites/ads/youtube_parody_logo.bmp")
 ]

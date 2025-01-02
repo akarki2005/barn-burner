@@ -33,3 +33,23 @@ static func set_home_team():
 		else:
 			GameVariables.home_team = 1
 		
+		
+static func set_ads():
+	
+	var used_nums = [-1]
+	var rand_num = -1
+	
+	GameVariables.p1_ad_numbers = []
+	for i in range(4):
+		while rand_num in used_nums:
+			rand_num = GameVariables.ad_numbers[randi() % GameVariables.ad_numbers.size()]
+		used_nums = used_nums + [rand_num]
+		GameVariables.p1_ad_numbers = GameVariables.p1_ad_numbers + [rand_num]
+		
+	rand_num = -1
+	GameVariables.p2_ad_numbers = []
+	for i in range(4):
+		while rand_num in used_nums:
+			rand_num = GameVariables.ad_numbers[randi() % GameVariables.ad_numbers.size()]
+		used_nums = used_nums + [rand_num]
+		GameVariables.p2_ad_numbers = GameVariables.p2_ad_numbers + [rand_num]
