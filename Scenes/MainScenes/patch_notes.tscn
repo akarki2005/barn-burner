@@ -44,13 +44,21 @@ flip_h = true
 
 [node name="newFeatures" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 171.0
-offset_right = 1050.0
-offset_bottom = 436.0
+offset_left = 99.0
+offset_top = 186.0
+offset_right = 1051.0
+offset_bottom = 466.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
+text = "- New game mode: Chaos
+    - In this frantic variation of the original game, each player has a 
+      goalie and attacking player to control
+    - The goalie can only move up and down, and their horizontal 
+      position is fixed along their respective goal line
+    - The attacker can move freely, like in the classic game mode
+- On-ice parody advertisements
+    - added on-ice parody advertising at 4 spots on the game rink"
 vertical_alignment = 1
 
 [node name="newFeaturesHeader" type="Label" parent="Control"]
@@ -68,10 +76,10 @@ vertical_alignment = 1
 
 [node name="bugFixesHeader" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 422.0
-offset_right = 1053.0
-offset_bottom = 522.0
+offset_left = 104.0
+offset_top = 472.0
+offset_right = 1056.0
+offset_bottom = 572.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 50
@@ -82,12 +90,13 @@ vertical_alignment = 1
 [node name="bugFixes" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 95.0
-offset_top = 518.0
+offset_top = 543.0
 offset_right = 1047.0
 offset_bottom = 609.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ss1hr")
 theme_override_font_sizes/font_size = 40
+text = "- Cleaned up some code under the hood to improve performance"
 vertical_alignment = 1
 
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

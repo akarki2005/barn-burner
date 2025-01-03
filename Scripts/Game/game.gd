@@ -53,10 +53,6 @@ func _ready():
 	p1teamlabel.text = GameVariables.teamCitiesAndAbbreviations[p1_team_number % teams][1]
 	p2teamlabel.text = GameVariables.teamCitiesAndAbbreviations[p2_team_number % teams][1]
 	
-	# initialize boost meters
-	var p1_boost_meter = $UserInterface/P1BoostMeter
-	var p2_boost_meter = $UserInterface/P2BoostMeter
-	
 	$Goalie1.goalie = true
 	$Goalie2.goalie = true
 	
@@ -65,7 +61,7 @@ func _ready():
 		$Goalie2.queue_free()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	boost_display_helper()
 
 
@@ -117,11 +113,11 @@ func _on_goal_scored(scorer):
 	GameVariables.p1_score = p1score
 	GameVariables.p2_score = p2score
 
-func _on_goal_detector_left_body_entered(body):
+func _on_goal_detector_left_body_entered(_body):
 	_on_goal_scored('p2')
 
 
-func _on_goal_detector_right_body_entered(body):
+func _on_goal_detector_right_body_entered(_body):
 	_on_goal_scored('p1')
 
 

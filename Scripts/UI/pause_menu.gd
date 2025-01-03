@@ -9,7 +9,7 @@ func _ready():
 	quit_button.pressed.connect(_quit)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# unpause game
 	if Input.is_action_just_pressed('pause'):
 		_pause()

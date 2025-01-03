@@ -1,6 +1,6 @@
 extends Control
 
-func _on_goal_detector_left_body_entered(body):
+func _on_goal_detector_left_body_entered(_body):
 	var goallightp2 = $GoalLightP2
 	var timedisplay = $TimeDisplay
 	var p2score = $P2Score
@@ -16,7 +16,7 @@ func _on_goal_detector_left_body_entered(body):
 	goalalertlabel._on_goal_scored()
 
 
-func _on_goal_detector_right_body_entered(body):
+func _on_goal_detector_right_body_entered(_body):
 	var goallightp1 = $GoalLightP1
 	var timedisplay = $TimeDisplay
 	var p1score = $P1Score

@@ -20,7 +20,7 @@ func _ready():
 	p2_team.text = GameVariables.teamCitiesAndAbbreviations[p2_curr_team % GameVariables.num_teams][0]
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("leftp1"):
 		cycle_team(1, 'left')
 	elif Input.is_action_just_pressed("rightp1"):

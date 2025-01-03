@@ -25,12 +25,12 @@ func _end_of_regulation():
 
 
 # when player 2 scores a goal
-func _on_goal_detector_left_body_entered(body):
+func _on_goal_detector_left_body_entered(_body):
 	p2score += 1
 	physics_frozen = true
 
 
 # when player 1 scores a goal
-func _on_goal_detector_right_body_entered(body):
+func _on_goal_detector_right_body_entered(_body):
 	p1score += 1 
 	physics_frozen = true

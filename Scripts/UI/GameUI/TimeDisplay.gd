@@ -5,7 +5,7 @@ var overtime = 0
 var end_of_regulation = false
 var gameover = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var time = ceil($GameClock.time_left)
 	if time > 0:
 		var mins = int(time) / 60
