@@ -40,6 +40,7 @@ var boost_meter_frames = 64
 var goalie: bool = false
 
 func _ready():
+	InputMap.load_from_project_settings()
 	
 	curr_boost = max_boost
 	# set sprite of players
