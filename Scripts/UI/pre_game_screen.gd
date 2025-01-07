@@ -53,6 +53,7 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainScenes/game.tscn")
 	
 	GameFunctions.set_ads()
+	GameFunctions.set_home_team()
 
 
 func cycle_team(player : int, direction : String):

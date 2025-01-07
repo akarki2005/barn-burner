@@ -12,7 +12,6 @@ static func reset_series_variables():
 	SeriesVariables.p1_wins = 0
 	SeriesVariables.p2_wins = 0
 	SeriesVariables.curr_game = 1
-	SeriesVariables.series_length = 1
 	
 
 static func set_home_team():
