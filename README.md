@@ -26,6 +26,9 @@ This is the github repository for Barn Burner, a 2D retro air hockey game develo
 * Best of 3/5/7 Series: Compete in a multi-game playoff series with the same teams, with alternating home/away splits
 
 ## Releases
+* January 6th, 2025
+	* [alpha v1.3.1 (windows)](Builds/BarnBurner_alpha1.3.1.exe)
+	* [Patch Notes](Docs/alpha_v1.3.1.md)
 * January 3rd, 2025
 	* [alpha v1.3 (windows)](Builds/BarnBurner_alpha1.3.exe)
 	* [Patch Notes](Docs/alpha_v1.3.md)
