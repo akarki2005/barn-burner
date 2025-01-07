@@ -205,12 +205,16 @@ boost = "boostp2"
 
 [node name="Goalie1" parent="." instance=ExtResource("2_d2tic")]
 position = Vector2(55.5, 324)
+move_left = "none"
+move_right = "none"
 move_up = "upp1"
 move_down = "downp1"
 boost = "boostp1"
 
 [node name="Goalie2" parent="." instance=ExtResource("2_d2tic")]
 position = Vector2(1096.5, 324)
+move_left = "none"
+move_right = "none"
 move_up = "upp2"
 move_down = "downp2"
 boost = "boostp2"

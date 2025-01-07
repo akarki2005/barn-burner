@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 # used to differentiate between player 1 and 2 controls
-@export var move_left = ''
-@export var move_right = ''
-@export var move_up = ''
-@export var move_down = ''
-@export var boost = ''
+@export var move_left: String
+@export var move_right: String
+@export var move_up: String
+@export var move_down: String
+@export var boost: String
 
 @onready var teamSprite = $teamSprite
 var curr_sprite_index = 0
