@@ -107,7 +107,7 @@ func boost_calculations():
 		prev_boosting = false
 	curr_boost = clamp(curr_boost, 0, max_boost)
 	
-	if curr_boost == max_boost:
+	if curr_boost >= 10:
 		lock_boost = false
 
 	boost_counter += 1
